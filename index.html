@@ -19,7 +19,14 @@ th,td{text-align:left;padding:.4rem .6rem;border-bottom:1px solid var(--bd)}
 .sc{overflow-x:auto}a{color:var(--ac)}
 nav.side{position:sticky;top:0;z-index:10;background:var(--cd);border-bottom:2px solid var(--ac);font:.8rem system-ui,sans-serif;padding:.45rem 1rem;display:flex;flex-wrap:wrap;gap:.35rem .9rem;align-items:center}
 nav.side b{color:var(--ac)}nav.side a{text-decoration:none;white-space:nowrap}nav.side a:hover{text-decoration:underline}
-.wrap{max-width:1100px;margin:0 auto}
+.wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:1.5rem;padding:0 1rem}
+main{margin:0;max-width:780px;width:100%}h2{scroll-margin-top:3.5rem}
+#toc{position:sticky;top:3rem;align-self:start;max-height:calc(100vh - 4rem);overflow:auto;font:.82rem/1.4 system-ui,sans-serif;padding-top:2rem}
+#toc ol{list-style:none;margin:.4rem 0 0;padding:0}
+#toc a{display:block;padding:.25rem .5rem;border-left:2px solid var(--bd);color:var(--mu);text-decoration:none}
+#toc a.on{color:var(--ac);border-color:var(--ac);font-weight:600}
+#toc summary{cursor:pointer;font-weight:700}
+@media(max-width:960px){.wrap{display:block}#toc{position:static;max-height:none;padding-top:1rem}}
 </style>
 </head>
 <body>
@@ -35,6 +42,12 @@ nav.side b{color:var(--ac)}nav.side a{text-decoration:none;white-space:nowrap}na
 <span style="margin-left:auto"><a href="#top20">Top-20</a> · <a href="#figures">Highlights</a> · <a href="gallery.html">Full gallery</a></span>
 </nav>
 <div class="wrap">
+<nav id="toc"><details open><summary>Contents</summary><ol>
+<li><a href="#top20">Top-20 NetPert intermediates</a></li>
+<li><a href="#figures">Figures</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="gallery.html">Full gallery (112)</a></li>
+</ol></details></nav>
 <main>
 <h1>NetPert Twist1 Real-Data Atlas</h1>
 <p class="mu">Drug-target prioritisation with network response functions (Perrone et al., PLOS Comp. Biol. 2024) —
@@ -77,10 +90,18 @@ Betweenness run on the full 17k-gene network. Full table: <a href="https://githu
 <figure><img src="results/figures/coverage_real.png" alt="Coverage"><figcaption>Response coverage (168/182 in-network) and network sizes.</figcaption></figure>
 <figure><img src="results/figures/08_report/robustness_edge_removal.png" alt="Robustness"><figcaption>Ranking stability when real edges are deleted — NetPert stays above betweenness out to 50% removed.</figcaption></figure>
 
-<h2>Contact</h2>
+<h2 id="contact">Contact</h2>
 <div class="box">Questions about this atlas? Contact: <a href="mailto:harshinisuresha7@gmail.com">harshinisuresha7@gmail.com</a></div>
 <p class="mu">Sources: Perrone et al. 2024 (doi:10.1371/journal.pcbi.1012195) · code ref joelbaderlab/netpert_v1 · IID · TRRUST v2 · EwaldLab 2019_Prkd1 (Georgess et al. 2019) · Drug Repurposing Hub 2020-03-24 · MGI homology.</p>
 </main>
 </div>
+<script>
+if('IntersectionObserver' in window){
+const links=[...document.querySelectorAll('#toc ol a[href^="#"]')];
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){links.forEach(a=>a.classList.toggle('on',a.hash==='#'+x.target.id))}}),{rootMargin:'-10% 0px -80% 0px'});
+document.querySelectorAll('main h2[id]').forEach(e=>io.observe(e));
+if(innerWidth<960)document.querySelector('#toc details').open=false;
+}
+</script>
 </body>
 </html>
