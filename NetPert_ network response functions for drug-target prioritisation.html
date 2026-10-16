@@ -1650,7 +1650,14 @@ I (neither),156,2.65e-06,0/20</pre></details>
 <tr><td>DIR genes in top-20</td><td>20/20</td></tr>
 <tr><td>DIR genes in top-50</td><td>50/50</td></tr>
 <tr><td>DIR genes in top-100</td><td>100/100</td></tr>
-<tr><td>DIR genes in top-200</td><td>149/200</td></tr></table></div><details><summary>Copy as CSV</summary><p>Browse the NetPert weight, degree, betweenness and driver PageRank of every gene in the real 1,200-gene Twist1 subnetwork (1,200 gene rows). Click a column header to sort. Gene symbols are searchable below.</p>
+<tr><td>DIR genes in top-200</td><td>149/200</td></tr></table></div><details><summary>Copy as CSV</summary><pre style='overflow:auto;font-size:.75rem'>Check,Value
+Drop TRRUST directed edges (531 in subnetwork),rank rho = 0.945; top-20 overlap 16/20
+DIR genes in top-10,10/10
+DIR genes in top-20,20/20
+DIR genes in top-50,50/50
+DIR genes in top-100,100/100
+DIR genes in top-200,149/200</pre></details>
+<h2>19. Gene-level data explorer</h2><p>Browse the NetPert weight, degree, betweenness and driver PageRank of every gene in the real 1,200-gene Twist1 subnetwork (1,200 gene rows). Click a column header to sort. Gene symbols are searchable below.</p>
 <div class="wd"><div class="ctl"><label>Network seed <input type="number" id="dx-s" min="0" max="0" value="0" style="width:4rem"></label><label>Role <select id="dx-r"><option value="-1">All</option><option value="1">Intermediates</option><option value="3">Responses</option></select></label><input id="dx-q" type="search" placeholder="Gene symbol" size="8" aria-label="Gene ID"><span id="dx-n"></span></div><div class="sc" style="max-height:420px;overflow:auto"><table id="dx-t"></table></div><div class="ctl"><button id="dx-p">Prev</button><button id="dx-x">Next</button><span id="dx-pg"></span><button id="dx-c">Copy table</button></div></div>
 <p class="mu">Ranks are NetPert ranks over all 1,200 genes (competition ranking); Twist1 and the responses sit at the bottom by construction. Weights are normalised to sum to 1.</p>
 <h2>20. Independent ground truth and the paper's own comparators</h2>
