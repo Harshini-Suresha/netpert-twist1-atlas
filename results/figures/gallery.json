@@ -498,5 +498,65 @@
   "file": "07_overview/pipeline.png",
   "title": "Pipeline schematic",
   "caption": "Six stages, no invented inputs."
+ },
+ {
+  "file": "08_report/concentration_curve.png",
+  "title": "Score concentration",
+  "caption": "NetPert top-10 hold 15% of total weight (real data)."
+ },
+ {
+  "file": "08_report/method_agreement_panels.png",
+  "title": "Method agreement panels",
+  "caption": "Concentration and rank agreement between methods on real data."
+ },
+ {
+  "file": "08_report/robustness_edge_removal.png",
+  "title": "Edge-removal robustness",
+  "caption": "Ranking stability when real interactome edges are deleted."
+ },
+ {
+  "file": "08_report/relaxation_sweep.png",
+  "title": "Relaxation sweep",
+  "caption": "Real-data ranking is insensitive to the relaxation fraction."
+ },
+ {
+  "file": "08_report/hub_bias_panels.png",
+  "title": "Hub-bias panels",
+  "caption": "Connectivity and betweenness context for NetPert weights."
+ },
+ {
+  "file": "08_report/weight_vs_distance.png",
+  "title": "Weight vs driver distance",
+  "caption": "How influence decays with real network distance from Twist1."
+ },
+ {
+  "file": "08_report/assay_waterfall.png",
+  "title": "Assay waterfall",
+  "caption": "Real inhibition ordered with NetPert ranks annotated."
+ },
+ {
+  "file": "08_report/rank_heatmap_top30.png",
+  "title": "Top-30 rank heatmap",
+  "caption": "Where the four real-data rankings agree and disagree."
+ },
+ {
+  "file": "08_report/pathtype_counts.png",
+  "title": "Path-type counts",
+  "caption": "DIR = direct driver+response neighbours; DI/IR = one-sided; I = rest."
+ },
+ {
+  "file": "08_report/weights_by_pathtype.png",
+  "title": "Weights by path type",
+  "caption": "Direct driver\u2013response connectors score highest on real data."
+ },
+ {
+  "file": "08_report/dir_enrichment_topk.png",
+  "title": "DIR enrichment",
+  "caption": "Direct connectors enriched at the top of the real ranking."
+ },
+ {
+  "file": "08_report/scorecard_table.png",
+  "title": "Scorecard",
+  "caption": "Headline real-data numbers in one table."
  }
 ]
