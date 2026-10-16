@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.DS_Store
+databases/
+data/real/mouse_annotated_PPIs.txt.gz
+data/real/HOM_MouseHumanSequence.rpt
+data/real/repurposing_drugs_20200324.txt
+*.tsv.gz
