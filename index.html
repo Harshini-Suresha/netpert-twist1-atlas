@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NetPert Twist1 Real-Data Atlas</title>
+<title>NetPert Twist1 Atlas</title>
 <style>
 :root{--bg:#fafaf9;--fg:#1c1917;--mu:#57534e;--ac:#c2410c;--bd:#e7e5e4;--cd:#fff}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 Georgia,"Times New Roman",serif}
@@ -50,15 +50,15 @@ main{margin:0;max-width:780px;width:100%}h2{scroll-margin-top:3.5rem}
 <li><a href="gallery.html">Full gallery</a></li>
 </ol></details></nav>
 <main>
-<h1>NetPert Twist1 Real-Data Atlas</h1>
+<h1>NetPert Twist1 Atlas</h1>
 <p class="mu">Drug-target prioritisation with network response functions (Perrone et al., PLOS Comp. Biol. 2024) —
-run on the <b>real</b> IID mouse interactome + TRRUST regulatory network, real Twist1 RNA-seq responses,
-and real dissemination assays. <a href="https://github.com/Harshini-Suresha/netpert-twist1-real-data">GitHub repo</a></p>
+run on the <b></b> IID mouse interactome + TRRUST regulatory network, Twist1 RNA-seq responses,
+and dissemination assays. <a href="https://github.com/Harshini-Suresha/netpert-twist1-">GitHub repo</a></p>
 
 <div class="box"><b>Network:</b> 17,191 genes / 1,891,745 directed edges (IID PPI + TRRUST v2).
 <b>Driver:</b> Twist1. <b>Responses:</b> 168/182 DE genes in-network (14 absent from the interactome).
 <b>Method:</b> dense NetPert (nt=16, r=0.5) on a 1,200-gene Twist1-centered subnetwork; conservation check 1.99e-15.
-Betweenness run on the full 17k-gene network. Full table: <a href="https://github.com/Harshini-Suresha/netpert-twist1-real-data/blob/main/results/geneRankings_real.tsv">geneRankings_real.tsv</a></div>
+Betweenness run on the full 17k-gene network. Full table: <a href="https://github.com/Harshini-Suresha/netpert-twist1-/blob/main/results/geneRankings_real.tsv">geneRankings_real.tsv</a></div>
 
 <h2 id="top20">Top-20 NetPert intermediates</h2>
 <div class="sc"><table>
@@ -86,13 +86,13 @@ Betweenness run on the full 17k-gene network. Full table: <a href="https://githu
 </table></div>
 
 <h2 id="figures">Figures</h2>
-<div class="box">Highlights below — the <a href="gallery.html">full figure gallery</a> holds the grouped visuals, including multi-panel dashboards and report-style plots computed on the real network.</div>
-<figure><img src="results/figures/top20_netpert_real.png" alt="Top-20 NetPert genes"><figcaption>Top-20 NetPert intermediates with real weights.</figcaption></figure>
+<div class="box">Highlights below — the <a href="gallery.html">full figure gallery</a> holds the grouped visuals, including multi-panel dashboards and report-style plots computed on the network.</div>
+<figure><img src="results/figures/top20_netpert_real.png" alt="Top-20 NetPert genes"><figcaption>Top-20 NetPert intermediates with weights.</figcaption></figure>
 <figure><img src="results/figures/coverage_real.png" alt="Coverage"><figcaption>Response coverage (168/182 in-network) and network sizes.</figcaption></figure>
-<figure><img src="results/figures/08_report/robustness_edge_removal.png" alt="Robustness"><figcaption>Ranking stability when real edges are deleted — NetPert stays above betweenness out to 50% removed.</figcaption></figure>
+<figure><img src="results/figures/08_report/robustness_edge_removal.png" alt="Robustness"><figcaption>Ranking stability when edges are deleted — NetPert stays above betweenness out to 50% removed.</figcaption></figure>
 
 <h2 id="contact">Contact</h2>
-<div class="box">Questions about this atlas? Contact: <a href="mailto:harshinisuresha7@gmail.com">harshinisuresha7@gmail.com</a></div>
+
 <p class="mu">Sources: Perrone et al. 2024 (doi:10.1371/journal.pcbi.1012195) · code ref joelbaderlab/netpert_v1 · IID · TRRUST v2 · EwaldLab 2019_Prkd1 (Georgess et al. 2019) · Drug Repurposing Hub 2020-03-24 · MGI homology.</p>
 </main>
 </div>

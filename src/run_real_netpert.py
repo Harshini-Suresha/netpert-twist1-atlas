@@ -1,17 +1,17 @@
 #!/usr/bin/env python
-"""Real-data NetPert run: Twist1 driver, IID mouse PPI + TRRUST mouse regulatory edges.
+""" NetPert run: Twist1 driver, IID mouse PPI + TRRUST mouse regulatory edges.
 
 All inputs are experimental/curated:
 - responses: data/real/responses.csv (Twist1 + 182 DE genes from Shamir et al / Twist1 organoids)
 - PPI: IID mouse_annotated_PPIs.txt.gz (symbol1/symbol2 columns, experimental + orthologous)
 - TF: data/real/trrust_rawdata.mouse.tsv (TRRUST v2, 7057 mouse TF-target pairs)
-- assays: data/real/fig1_dissemination.csv (Georgess et al 2019, EwaldLab, real dissemination % + IC50)
+- assays: data/real/fig1_dissemination.csv (Georgess et al 2019, EwaldLab, dissemination % + IC50)
 - drugs: Drug Repurposing Hub 2020-03-24 + MGI HOM homology (human->mouse orthologs)
 
 Design (documented limitation): dense NetPert (scipy.linalg.expm) is O(nt*N^3) so it runs
-on a REAL Twist1-centered subnetwork (~1.2k genes: driver + in-network responses +
+on a Twist1-centered subnetwork (~1.2k genes: driver + in-network responses +
 shortest-path mediators + top 1-hop connectors). Betweenness is computed on the FULL
-real network (17k genes, 1.9M directed edges) plus on the subnetwork for comparison.
+ network (17k genes, 1.9M directed edges) plus on the subnetwork for comparison.
 """
 import gzip, os, sys, json
 import numpy as np
@@ -21,7 +21,7 @@ from scipy import linalg, integrate
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-DATA = os.path.join(ROOT, "data", "real")
+DATA = os.path.join(ROOT, "data", "")
 RES = os.path.join(ROOT, "results")
 FIG = os.path.join(ROOT, "results", "figures")
 IID_GZ_CANDIDATES = [
@@ -30,7 +30,7 @@ IID_GZ_CANDIDATES = [
 ]
 DRIVER = "Twist1"
 R = 0.5
-NT = 16  # 2^k+1 = 17 points -> Romberg quadrature (paper default)
+NT = 16 # 2^k+1 = 17 points -> Romberg quadrature (paper default)
 
 os.makedirs(RES, exist_ok=True)
 os.makedirs(FIG, exist_ok=True)
@@ -82,13 +82,13 @@ def main():
     edges = load_edges()
     G = nx.DiGraph()
     G.add_edges_from(edges)
-    print(f"Full real network: {G.number_of_nodes()} nodes, {G.number_of_edges()} directed edges", flush=True)
+    print(f"Full network: {G.number_of_nodes()} nodes, {G.number_of_edges()} directed edges", flush=True)
 
     in_resp = [r for r in responses_all if r in G]
     missing = [r for r in responses_all if r not in G]
     print(f"In-network responses: {len(in_resp)}/{len(responses_all)}; missing (unconnected Gene-U): {missing}")
 
-    # --- Twist1-centered subnetwork (all real edges) ---
+    # --- Twist1-centered subnetwork (all edges) ---
     d1 = set(G.successors(DRIVER)) | set(G.predecessors(DRIVER))
     medi = set()
     for r in in_resp:
@@ -100,7 +100,7 @@ def main():
             pass
     core = set([DRIVER]) | set(in_resp) | set(d1) | set(medi)
     print(f"Core (driver+responses+driver1hop+sp-mediators): {len(core)}")
-    # expand with real 1-hop neighbours most connected to core, cap ~1200 nodes
+    # expand with 1-hop neighbours most connected to core, cap ~1200 nodes
     TARGET = 1200
     if len(core) < TARGET:
         from collections import Counter
@@ -122,7 +122,7 @@ def main():
     sub_in_resp = [r for r in in_resp if r in sub_nodes]
     print(f"Subnetwork responses retained: {len(sub_in_resp)}/{len(in_resp)}")
 
-    # edge list of subnetwork (real edges only)
+    # edge list of subnetwork (edges only)
     sub_edges = [(a, b) for (a, b) in edges if a in set(sub_nodes) and b in set(sub_nodes)]
     print(f"Subnetwork directed edges: {len(sub_edges)}")
 
@@ -147,7 +147,7 @@ def main():
     for i in range(NT):
         cur = cur @ G1
         Glist.append(cur)
-    Glist = np.array(Glist)  # (NT+1, N, N)
+    Glist = np.array(Glist) # (NT+1, N, N)
     # conservation check: sum_x G[T-t][b,x] G[t][x,a] == G[T][b,a]
     a_idx = v2i[DRIVER]
     b0 = v2i[sub_in_resp[0]]
@@ -164,12 +164,12 @@ def main():
 
     verts = sorted(sub_nodes)
     # clean vectorised weights: Ga[t,x] = G[x,a](t), Gb[t,x] = G[b,x](T-t)
-    Ga = np.array([[Glist[i][x, a_idx] for x in range(N)] for i in range(NT + 1)])  # (t, x)
+    Ga = np.array([[Glist[i][x, a_idx] for x in range(N)] for i in range(NT + 1)]) # (t, x)
     W = np.zeros(N)
     for r in sub_in_resp:
         b = v2i[r]
-        Gb = np.array([[Glist[NT - i][b, x] for x in range(N)] for i in range(NT + 1)])  # (t, x)
-        F = Gb * Ga  # (t, x)
+        Gb = np.array([[Glist[NT - i][b, x] for x in range(N)] for i in range(NT + 1)]) # (t, x)
+        F = Gb * Ga # (t, x)
         # Romberg over t for each x
         for x in range(N):
             v = verts[x]
@@ -191,7 +191,7 @@ def main():
     Gs.add_edges_from(sub_edges)
     print("Betweenness (subnetwork) ...", flush=True)
     bc_sub = nx.betweenness_centrality_subset(Gs, sources=[DRIVER], targets=sub_in_resp)
-    print("Betweenness (FULL real network, 17k nodes) ...", flush=True)
+    print("Betweenness (FULL network, 17k nodes) ...", flush=True)
     bc_full_all = nx.betweenness_centrality_subset(G, sources=[DRIVER], targets=in_resp)
     outdeg_full = {n: G.out_degree(n) for n in sub_nodes}
 
@@ -245,7 +245,7 @@ def main():
     except Exception as e:
         print(f"Drug mapping skipped: {e}")
 
-    # --- Assay correlation (real dissemination %) ---
+    # --- Assay correlation (dissemination %) ---
     assay = pd.read_csv(os.path.join(DATA, "fig1_dissemination.csv"))
     # normalise columns
     assay.columns = [c.strip() for c in assay.columns]
@@ -306,7 +306,7 @@ def main():
             "ppi": "IID mouse_annotated_PPIs.txt.gz (symbol1/symbol2), http://iid.ophid.utoronto.ca",
             "tf": "TRRUST v2 mouse (grnpedia.org), 7057 pairs",
             "responses": "netpert_v1 manuscript_netpert/responses.csv (Twist1 + 182 DE genes, Shamir et al organoids)",
-            "assays": "EwaldLab 2019_Prkd1 Georgess_Prkd1_2019_Data_Final.xlsx Fig.1 (real IC50 + dissemination %)",
+            "assays": "EwaldLab 2019_Prkd1 Georgess_Prkd1_2019_Data_Final.xlsx Fig.1 (IC50 + dissemination %)",
             "drugs": "Drug Repurposing Hub 20200324 + MGI HOM_MouseHumanSequence.rpt",
         },
     }
@@ -314,7 +314,7 @@ def main():
         json.dump(summ, fp, indent=2)
     print(json.dumps({k: summ[k] for k in ["full_nodes", "full_directed_edges", "responses_in_network", "subnetwork_nodes", "subnetwork_edges", "assay_overlap_subnetwork"]}, indent=2))
 
-    # --- Figures (real data only) ---
+    # --- Figures (only) ---
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -322,8 +322,8 @@ def main():
     plt.figure(figsize=(10, 5))
     plt.bar([g for g, _ in top], [w for _, w in top])
     plt.xticks(rotation=60, ha="right")
-    plt.ylabel("NetPert weight (real Twist1 network)")
-    plt.title("Top-20 NetPert genes — REAL IID+TRRUST Twist1 network")
+    plt.ylabel("NetPert weight (Twist1 network)")
+    plt.title("Top-20 NetPert genes — IID+TRRUST Twist1 network")
     plt.tight_layout()
     plt.savefig(os.path.join(FIG, "top20_netpert_real.png"), dpi=150)
     if rows:
@@ -331,9 +331,9 @@ def main():
         plt.scatter([r[1] for r in rows], [r[3] for r in rows])
         for g, wv, rk, dv, _ in rows:
             plt.annotate(g, (wv, dv), fontsize=6)
-        plt.xlabel("NetPert weight (real)")
-        plt.ylabel("Dissemination at 1uM % (real assay, lower = stronger)")
-        plt.title(f"NetPert vs real dissemination (rho={rho:.2f}, n={len(rows)})")
+        plt.xlabel("NetPert weight")
+        plt.ylabel("Dissemination at 1uM % (assay, lower = stronger)")
+        plt.title(f"NetPert vs dissemination (rho={rho:.2f}, n={len(rows)})")
         plt.tight_layout()
         plt.savefig(os.path.join(FIG, "netpert_vs_dissemination_real.png"), dpi=150)
     print("Figures saved.")

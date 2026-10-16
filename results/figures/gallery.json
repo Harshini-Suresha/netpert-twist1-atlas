@@ -1,37 +1,37 @@
 [
  {
   "file": "01_rankings/top10_netpert.png",
-  "title": "Top-10 NetPert genes (real Twist1 network)",
+  "title": "Top-10 NetPert genes (Twist1 network)",
   "caption": "Highest NetPert weights; all intermediates."
  },
  {
   "file": "01_rankings/top30_netpert.png",
-  "title": "Top-30 NetPert genes (real Twist1 network)",
+  "title": "Top-30 NetPert genes (Twist1 network)",
   "caption": "Weights decay smoothly past the top hubs."
  },
  {
   "file": "01_rankings/top50_netpert.png",
-  "title": "Top-50 NetPert genes (real Twist1 network)",
+  "title": "Top-50 NetPert genes (Twist1 network)",
   "caption": "Top-50 of 1,200 ranked subnetwork genes."
  },
  {
   "file": "01_rankings/top100_netpert.png",
-  "title": "Top-100 NetPert genes (real Twist1 network)",
+  "title": "Top-100 NetPert genes (Twist1 network)",
   "caption": "The full head of the ranking; long tail beyond."
  },
  {
   "file": "01_rankings/top20_bcsub.png",
-  "title": "Top-20 betweenness-subset genes (real subnetwork)",
+  "title": "Top-20 betweenness-subset genes (subnetwork)",
   "caption": "Driver-to-response betweenness on the same subnetwork."
  },
  {
   "file": "01_rankings/top20_bcfull.png",
-  "title": "Top-20 betweenness genes (real full 17k network)",
+  "title": "Top-20 betweenness genes (full 17k network)",
   "caption": "Betweenness on the full IID+TRRUST network."
  },
  {
   "file": "01_rankings/top20_hubs.png",
-  "title": "Top-20 hubs by out-degree (real full network)",
+  "title": "Top-20 hubs by out-degree (full network)",
   "caption": "Raw connectivity leaders for hub-bias context."
  },
  {
@@ -82,12 +82,12 @@
  {
   "file": "02_network/degree_dist_full.png",
   "title": "Full-network degree distribution",
-  "caption": "17k-gene real interactome; long tail."
+  "caption": "17k-gene interactome; long tail."
  },
  {
   "file": "02_network/twist1_degree.png",
   "title": "Twist1 connectivity context",
-  "caption": "Twist1 has 199 out-neighbours in the real network."
+  "caption": "Twist1 has 199 out-neighbours in the network."
  },
  {
   "file": "02_network/driver_distances.png",
@@ -97,7 +97,7 @@
  {
   "file": "02_network/mediator_frequency.png",
   "title": "Shortest-path mediator frequency",
-  "caption": "Real nodes most often on driver-to-response shortest paths."
+  "caption": "nodes most often on driver-to-response shortest paths."
  },
  {
   "file": "02_network/edge_provenance.png",
@@ -122,7 +122,7 @@
  {
   "file": "03_assays/ic50_vs_dissemination.png",
   "title": "Potency vs effect",
-  "caption": "Real IC50 against real dissemination."
+  "caption": "IC50 against dissemination."
  },
  {
   "file": "03_assays/logfc_vs_dissemination.png",
@@ -162,17 +162,17 @@
  {
   "file": "03_assays/assay_table.png",
   "title": "Assay table",
-  "caption": "All 18 genes with a real dissemination readout."
+  "caption": "All 18 genes with a dissemination readout."
  },
  {
   "file": "03_assays/assay_panels_strongest.png",
   "title": "Assay panels (strongest)",
-  "caption": "Real dissemination % with NetPert ranks, strongest 9 of 18."
+  "caption": "dissemination % with NetPert ranks, strongest 9 of 18."
  },
  {
   "file": "03_assays/assay_panels_weakest.png",
   "title": "Assay panels (weakest)",
-  "caption": "Real dissemination % with NetPert ranks, weakest 9 of 18."
+  "caption": "dissemination % with NetPert ranks, weakest 9 of 18."
  },
  {
   "file": "04_spotlights/spot_01_Pdgfra.png",
@@ -437,22 +437,22 @@
  {
   "file": "06_compare/scatter_NetPert_weight_vs_BCsub_weight.png",
   "title": "NetPert vs BC-sub",
-  "caption": "Spearman rho=0.58 over 1200 real genes."
+  "caption": "Spearman rho=0.58 over 1200 genes."
  },
  {
   "file": "06_compare/scatter_NetPert_weight_vs_BCfull_weight.png",
   "title": "NetPert vs BC-full",
-  "caption": "Spearman rho=0.59 over 1200 real genes."
+  "caption": "Spearman rho=0.59 over 1200 genes."
  },
  {
   "file": "06_compare/scatter_NetPert_weight_vs_outdegree_full.png",
   "title": "NetPert vs out-degree",
-  "caption": "Spearman rho=0.51 over 1200 real genes."
+  "caption": "Spearman rho=0.51 over 1200 genes."
  },
  {
   "file": "06_compare/scatter_BCsub_weight_vs_BCfull_weight.png",
   "title": "BC-sub vs BC-full",
-  "caption": "Spearman rho=1.00 over 1200 real genes."
+  "caption": "Spearman rho=1.00 over 1200 genes."
  },
  {
   "file": "06_compare/rank_shifts.png",
@@ -492,7 +492,7 @@
  {
   "file": "07_overview/summary_table.png",
   "title": "Summary table",
-  "caption": "Every number from real inputs."
+  "caption": "Every number from inputs."
  },
  {
   "file": "07_overview/pipeline.png",
@@ -502,22 +502,22 @@
  {
   "file": "08_report/concentration_curve.png",
   "title": "Score concentration",
-  "caption": "NetPert top-10 hold 15% of total weight (real data)."
+  "caption": "NetPert top-10 hold 15% of total weight ()."
  },
  {
   "file": "08_report/method_agreement_panels.png",
   "title": "Method agreement panels",
-  "caption": "Concentration and rank agreement between methods on real data."
+  "caption": "Concentration and rank agreement between methods on ."
  },
  {
   "file": "08_report/robustness_edge_removal.png",
   "title": "Edge-removal robustness",
-  "caption": "Ranking stability when real interactome edges are deleted."
+  "caption": "Ranking stability when interactome edges are deleted."
  },
  {
   "file": "08_report/relaxation_sweep.png",
   "title": "Relaxation sweep",
-  "caption": "Real-data ranking is insensitive to the relaxation fraction."
+  "caption": "ranking is insensitive to the relaxation fraction."
  },
  {
   "file": "08_report/hub_bias_panels.png",
@@ -527,17 +527,17 @@
  {
   "file": "08_report/weight_vs_distance.png",
   "title": "Weight vs driver distance",
-  "caption": "How influence decays with real network distance from Twist1."
+  "caption": "How influence decays with network distance from Twist1."
  },
  {
   "file": "08_report/assay_waterfall.png",
   "title": "Assay waterfall",
-  "caption": "Real inhibition ordered with NetPert ranks annotated."
+  "caption": "inhibition ordered with NetPert ranks annotated."
  },
  {
   "file": "08_report/rank_heatmap_top30.png",
   "title": "Top-30 rank heatmap",
-  "caption": "Where the four real-data rankings agree and disagree."
+  "caption": "Where the four rankings agree and disagree."
  },
  {
   "file": "08_report/pathtype_counts.png",
@@ -547,17 +547,17 @@
  {
   "file": "08_report/weights_by_pathtype.png",
   "title": "Weights by path type",
-  "caption": "Direct driver\u2013response connectors score highest on real data."
+  "caption": "Direct driver\u2013response connectors score highest on ."
  },
  {
   "file": "08_report/dir_enrichment_topk.png",
   "title": "DIR enrichment",
-  "caption": "Direct connectors enriched at the top of the real ranking."
+  "caption": "Direct connectors enriched at the top of the ranking."
  },
  {
   "file": "08_report/scorecard_table.png",
   "title": "Scorecard",
-  "caption": "Headline real-data numbers in one table."
+  "caption": "Headline numbers in one table."
  },
  {
   "file": "09_complex/dashboard_overview.png",
@@ -572,7 +572,7 @@
  {
   "file": "09_complex/dashboard_assay.png",
   "title": "Assay dashboard",
-  "caption": "Every real wet-lab readout crossed with every ranking."
+  "caption": "Every wet-lab readout crossed with every ranking."
  },
  {
   "file": "09_complex/dashboard_network.png",
@@ -582,7 +582,7 @@
  {
   "file": "09_complex/dashboard_methods.png",
   "title": "Methods dashboard",
-  "caption": "Scatters, heatmap, correlations and overlaps between all real-data rankings."
+  "caption": "Scatters, heatmap, correlations and overlaps between all rankings."
  },
  {
   "file": "09_complex/dashboard_drugs.png",

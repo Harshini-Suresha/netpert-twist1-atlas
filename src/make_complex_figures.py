@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Complex composite dashboards (multi-panel) from real Twist1 data.
+"""Complex composite dashboards (multi-panel) from Twist1 data.
 Saves to results/figures/09_complex/ + appends gallery.json manifest."""
 import os
 import json
@@ -13,7 +13,7 @@ from scipy.stats import spearmanr
 ROOT = "/Users/harshinisuresha/Downloads/network pertubation"
 RES = ROOT + "/results"
 FIGD = ROOT + "/results/figures/09_complex"
-DATA = ROOT + "/data/real"
+DATA = ROOT + "/data/"
 os.makedirs(FIGD, exist_ok=True)
 MAN = []
 
@@ -44,7 +44,7 @@ mm = m.dropna(subset=["dissem"]).sort_values("dissem")
 
 # 1. overview dashboard (2x3)
 fig, ax = plt.subplots(2, 3, figsize=(12, 7))
-fig.suptitle("Twist1 NetPert — overview dashboard (real data)", fontsize=12)
+fig.suptitle("Twist1 NetPert — overview dashboard", fontsize=12)
 t20 = npr.head(20)
 ax[0, 0].bar(t20["gene"].values, t20["NetPert_weight"].values, color=AC)
 ax[0, 0].set_xticklabels(t20["gene"].values, rotation=75, ha="right", fontsize=6)
@@ -74,7 +74,7 @@ save(fig, "dashboard_overview.png", "Overview dashboard",
 
 # 2. robustness deep-dive (2x2)
 fig, ax = plt.subplots(2, 2, figsize=(10, 8))
-fig.suptitle("Robustness deep-dive (real edge deletion, 3 repeats)", fontsize=12)
+fig.suptitle("Robustness deep-dive (edge deletion, 3 repeats)", fontsize=12)
 ax[0, 0].errorbar(lv, [sw["robustness"][k]["np_mean"] for k in kk],
                   yerr=[sw["robustness"][k]["np_sd"] for k in kk], fmt="o-", color=AC, label="NetPert")
 ax[0, 0].errorbar(lv, [sw["robustness"][k]["bc_mean"] for k in kk],
@@ -91,7 +91,7 @@ save(fig, "dashboard_robustness.png", "Robustness dashboard",
 
 # 3. assay dashboard (2x3)
 fig, ax = plt.subplots(2, 3, figsize=(12, 7))
-fig.suptitle("Assay dashboard — real dissemination readouts", fontsize=12)
+fig.suptitle("Assay dashboard — dissemination readouts", fontsize=12)
 o = mm.sort_values("dissem")
 ax[0, 0].barh(o["gene"].values, o["dissem"].values, color=plt.cm.RdYlGn_r(o["dissem"].values / 100))
 ax[0, 0].set_title("Dissemination % at 1uM (lower = stronger)")
@@ -108,11 +108,11 @@ ax[1, 1].set_title("IC50 vs dissemination"); ax[1, 1].set_xlabel("log10 IC50")
 ax[1, 2].scatter(np.log10(mm["BCfull_weight"].values + 1e-12), mm["dissem"].values, color=BLUE, s=20)
 ax[1, 2].set_title("Betweenness vs dissemination"); ax[1, 2].set_xlabel("log10 BC weight")
 save(fig, "dashboard_assay.png", "Assay dashboard",
-     "Every real wet-lab readout crossed with every ranking.")
+     "Every wet-lab readout crossed with every ranking.")
 
 # 4. network dashboard (2x3)
 fig, ax = plt.subplots(2, 3, figsize=(12, 7))
-fig.suptitle("Network dashboard — real IID+TRRUST structure", fontsize=12)
+fig.suptitle("Network dashboard — IID+TRRUST structure", fontsize=12)
 d = r["outdegree_full"].values; d = d[d > 0]
 ax[0, 0].hist(np.log10(d), bins=40, color=BLUE)
 ax[0, 0].set_title("Out-degree distribution (log10)")
@@ -134,7 +134,7 @@ save(fig, "dashboard_network.png", "Network dashboard",
 
 # 5. methods dashboard (2x2)
 fig, ax = plt.subplots(2, 2, figsize=(10, 8))
-fig.suptitle("Methods dashboard — head-to-head on real data", fontsize=12)
+fig.suptitle("Methods dashboard — head-to-head on ", fontsize=12)
 ax[0, 0].scatter(np.log10(w + 1e-12), np.log10(bc + 1e-12), s=6, alpha=0.4, color=BLUE)
 ax[0, 0].set_title("NetPert vs betweenness"); ax[0, 0].set_xlabel("log10 NP"); ax[0, 0].set_ylabel("log10 BC")
 t30 = npr.head(30)
@@ -155,12 +155,12 @@ bcset = lambda k: set(r.sort_values("BCsub_rank").head(k)["gene"])
 ax[1, 1].plot(ks, [len(npset(k) & bcset(k)) / k for k in ks], "o-", color=AC)
 ax[1, 1].set_title("Top-k overlap NP ∩ BC"); ax[1, 1].set_xlabel("k"); ax[1, 1].set_ylabel("fraction")
 save(fig, "dashboard_methods.png", "Methods dashboard",
-     "Scatters, heatmap, correlations and overlaps between all real-data rankings.")
+     "Scatters, heatmap, correlations and overlaps between all rankings.")
 
 # 6. drugs dashboard (2x2)
 from collections import Counter
 fig, ax = plt.subplots(2, 2, figsize=(10, 8))
-fig.suptitle("Drugs dashboard — real Repurposing Hub mapping", fontsize=12)
+fig.suptitle("Drugs dashboard — Repurposing Hub mapping", fontsize=12)
 ndr = r["drugs"].apply(lambda s_: 0 if not s_ else len(str(s_).split(",")))
 ax[0, 0].hist(ndr.values, bins=range(0, 12), color=AC, rwidth=0.85)
 ax[0, 0].set_title("Compounds per gene")
@@ -185,7 +185,7 @@ save(fig, "dashboard_drugs.png", "Drugs dashboard",
 
 # 7. paths dashboard (2x2)
 fig, ax = plt.subplots(2, 2, figsize=(10, 8))
-fig.suptitle("Paths dashboard — DIR structure on real edges", fontsize=12)
+fig.suptitle("Paths dashboard — DIR structure on edges", fontsize=12)
 ax[0, 0].bar(["DIR", "DI", "IR", "I"], [154, 51, 838, 156], color=[AC, BLUE, GREEN, GREY])
 ax[0, 0].set_title("Path-type counts")
 ax[0, 1].bar(["DIR", "DI", "IR", "I"], [3.800987e-03, 2.393529e-04, 1.248262e-04, 2.6542565e-06],

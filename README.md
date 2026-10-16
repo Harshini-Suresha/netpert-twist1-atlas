@@ -1,7 +1,7 @@
-# NetPert Twist1 — real lab data run
+# NetPert Twist1 — lab data run
 
 Reproduction of [NetPert](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012195)
-(Perrone et al., PLOS Comp. Biol. 2024) using **only real experimental/curated data**.
+(Perrone et al., PLOS Comp. Biol. 2024) using **only experimental/curated data**.
 There are no Barabási–Albert / Erdős–Rényi / Watts–Strogatz simulations anywhere in
 `results/` — every number there comes from the sources below.
 
@@ -11,17 +11,17 @@ There are no Barabási–Albert / Erdős–Rényi / Watts–Strogatz simulations
 - **Responses:** `data/real/responses.csv` — Twist1 + 182 differentially expressed genes
   (official `netpert_v1` manuscript project file; DE list from Shamir et al. RNA-seq,
   cf. paper: 183 genome-wide-significant genes).
-- **Network (real):**
+- **Network:**
   - PPI: IID `mouse_annotated_PPIs.txt.gz`, `symbol1`/`symbol2` columns
     (952,754 rows → 1,886,194 directed edges after de-duplication; experimental + orthologous).
   - Regulatory: TRRUST v2 mouse `trrust_rawdata.mouse.tsv` (7,057 TF→target pairs, 827 TFs).
-  - Full real network: **17,191 nodes / 1,891,745 directed edges**.
+  - Full network: **17,191 nodes / 1,891,745 directed edges**.
   - In-network responses: **168/182**; 14 missing are genuinely absent from IID+TRRUST
     (`Gpr110, Lphn3, Odz3, E030013I19Rik, Slco1a5, Gbp8, Fut2, Btbd11, Sept8,
     3110079O15Rik, 2610528A11Rik, 2010111I01Rik, 1600029D21Rik, St5`) — the paper's
     "Gene U" unconnected-response case, not a bug.
 - **Method:** `src/run_real_netpert.py`
-  - Dense NetPert (`scipy.linalg.expm`, Romberg `nt=16`, `r=0.5`) on a **real
+  - Dense NetPert (`scipy.linalg.expm`, Romberg `nt=16`, `r=0.5`) on a **
     Twist1-centered subnetwork**: driver + 168 in-network responses + driver 1-hop
     (205) + shortest-path mediators (≤4 steps) + top 1-hop connectors → **1,200 nodes /
     228,199 directed edges**.
@@ -30,12 +30,12 @@ There are no Barabási–Albert / Erdős–Rényi / Watts–Strogatz simulations
     and on the subnetwork; out-degree baseline.
   - Drug mapping: Drug Repurposing Hub 2020-03-24 (human targets → mouse orthologs via
     MGI `HOM_MouseHumanSequence.rpt`); compounds with >5 targets omitted per paper.
-- **Wet-lab assays (real):** `data/real/fig1_dissemination.csv` parsed from
+- **Wet-lab assays:** `data/real/fig1_dissemination.csv` parsed from
   EwaldLab `2019_Prkd1` `Georgess_Prkd1_2019_Data_Final.xlsx` Fig.1
-  (Georgess et al., Cancer Res. 2019): real log2FC, IC50, and **dissemination % at 1 µM**
+  (Georgess et al., Cancer Res. 2019): log2FC, IC50, and **dissemination % at 1 µM**
   for inhibitors of Twist1-upregulated genes.
 
-## Results (real data)
+## Results ()
 
 Top-20 NetPert intermediates (full table: `results/geneRankings_real.tsv`):
 
@@ -62,7 +62,7 @@ Top-20 NetPert intermediates (full table: `results/geneRankings_real.tsv`):
 | 19 | Hdac6 | 1.02e-02 | belinostat, dacinostat, … |
 | 20 | H4c1 | 1.02e-02 | — |
 
-Assay correlation (honest null): 18 genes have both a subnetwork ranking and a real
+Assay correlation (honest null): 18 genes have both a subnetwork ranking and a 
 dissemination readout. Spearman(NetPert weight, dissemination %) = **+0.31, p=0.21,
 n=18**; BC-subset = −0.10, p=0.71. I.e. **no significant prediction of dissemination
 inhibition in this small subset**. Important context: all 18 are *response* genes
@@ -70,7 +70,7 @@ inhibition in this small subset**. Important context: all 18 are *response* gene
 dissemination screen targeted DE genes themselves, so this test is underpowered and
 mismatched by construction (e.g. Sema5a shows 0% dissemination under Gö-6976/Prkd1
 inhibition yet ranks 1133 as a response, as expected). The value here is the
-real-data ranking + drug list, not this correlation.
+ ranking + drug list, not this correlation.
 
 Figures in `results/figures/` grouped by folder (see `gallery.html` on the site, or `results/figures/gallery.json` manifest):
 - `01_rankings/`: top-10/20/30/50/100 bars, BC + hub leaderboards, rank curves, class split, top-k overlap.
@@ -80,7 +80,7 @@ Figures in `results/figures/` grouped by folder (see `gallery.html` on the site,
 - `05_drugs/`: compounds-per-gene, top compounds, druggable enrichment, top druggable list, per-target compound charts.
 - `06_compare/`: pairwise scatters, rank shifts, winners/losers, intermediates/responses-only, agreement + assay-rho summaries.
 - `07_overview/`: summary table, pipeline schematic.
-- `08_report/`: report-style analogues computed on real data — score concentration curve, method-agreement panels, edge-removal robustness, relaxation sweep, hub-bias panels, weight-vs-distance, assay waterfall, top-30 rank heatmap, path-type counts/weights/DIR-enrichment, scorecard table.
+- `08_report/`: report-style analogues computed on — score concentration curve, method-agreement panels, edge-removal robustness, relaxation sweep, hub-bias panels, weight-vs-distance, assay waterfall, top-30 rank heatmap, path-type counts/weights/DIR-enrichment, scorecard table.
 - `09_complex/`: multi-panel dashboards combining ranking, network, assay, drug, path and robustness views.
 - Plus originals at `results/figures/` root.
 - Regenerate: `python src/make_extra_figures.py`, `python src/make_100_figures.py`, `python src/make_report_style_figures.py` and `python src/make_complex_figures.py` (full-network panels need the IID download, skipped gracefully if absent).
@@ -88,7 +88,7 @@ Figures in `results/figures/` grouped by folder (see `gallery.html` on the site,
 ## Reproduce
 
 ```bash
-python -m pip install -r requirements.txt   # numpy scipy pandas networkx matplotlib scikit-learn
+python -m pip install -r requirements.txt # numpy scipy pandas networkx matplotlib scikit-learn
 python src/run_real_netpert.py
 ```
 
@@ -102,20 +102,20 @@ python src/run_real_netpert.py
 
 ## Files
 
-- `src/run_real_netpert.py` — full real-data pipeline (network build → NetPert → BC → drugs → assays → figures).
+- `src/run_real_netpert.py` — full pipeline (network build → NetPert → BC → drugs → assays → figures).
 - `data/real/responses.csv` — Twist1 + 182 DE genes (official manuscript file).
-- `data/real/fig1_dissemination.csv` — real DE + IC50 + dissemination % (EwaldLab).
+- `data/real/fig1_dissemination.csv` — DE + IC50 + dissemination % (EwaldLab).
 - `data/real/trrust_rawdata.mouse.tsv` — TRRUST v2 mouse (downloaded from grnpedia.org).
 - `results/geneRankings_real.tsv` — rankings/weights/BC/drugs for all 1,200 subnetwork genes.
 - `results/summary_real.json` — network sizes, conservation check, correlation stats, provenance.
-- `results/figures/` — real-data plots.
-- `results/archive/` — everything extracted from the report HTML so nothing is missed: 12 benchmark tables, all 25 embedded figures + captions, and the 12,000-row gene-explorer dataset (see its README; simulated, not real).
+- `results/figures/` — plots.
+- `results/archive/` — everything extracted from the report HTML so nothing is missed: 12 benchmark tables, all 25 embedded figures + captions, and the 12,000-row gene-explorer dataset (see its README; simulated, not).
 
 ## Limitations
 
 - Dense `expm` forces the 1,200-gene Twist1 neighborhood for NetPert; BC runs on the full
   17k network for comparison. A sparse-`expm_multiply` full-network NetPert is future work.
-- 14/182 responses absent from IID+TRRUST (interactome incompleteness — real limitation).
+- 14/182 responses absent from IID+TRRUST (interactome incompleteness — limitation).
 - PPI treated as undirected (both directions = 1); TRRUST directed; regulation sign ignored (40% missing + context-dependent, per paper).
 - Human→mouse drug mapping assumes conserved activity; promiscuous compounds (>5 targets) omitted.
 - No multiple-testing correction on the assay correlation; n=18, descriptive only.
