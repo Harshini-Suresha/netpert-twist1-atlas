@@ -72,16 +72,16 @@ mismatched by construction (e.g. Sema5a shows 0% dissemination under Gö-6976/Pr
 inhibition yet ranks 1133 as a response, as expected). The value here is the
 real-data ranking + drug list, not this correlation.
 
-Figures (`results/figures/`, all real data):
-- `top20_netpert_real.png` — top-20 NetPert intermediates.
-- `netpert_vs_dissemination_real.png` — NetPert weight vs real dissemination % (n=18).
-- `assay_inhibition_real.png` — real dissemination % bars for the 18 assayed genes.
-- `weight_dist_real.png` — NetPert weight distribution (1,200 genes).
-- `netpert_vs_bc_real.png` — NetPert vs full-network betweenness (rho=0.59).
-- `degree_vs_netpert_real.png` — hub-bias check, out-degree vs NetPert (rho=0.51).
-- `rank_comparison_real.png` — NetPert rank vs betweenness rank agreement.
-- `coverage_real.png` — response coverage (168/182) and network sizes.
-- Extra plots: `python src/make_extra_figures.py`.
+Figures — 100 PNGs in `results/figures/` grouped by folder (see `gallery.html` on the site, or `results/figures/gallery.json` manifest):
+- `01_rankings/` (11): top-10/20/30/50/100 bars, BC + hub leaderboards, rank curves, class split, top-k overlap.
+- `02_network/` (11): response coverage, the 14 missing genes, composition, degree distributions (sub + full 17k), Twist1 degree context, driver-to-response distances, mediator frequency, edge provenance, response direction.
+- `03_assays/` (13): dissemination bars, IC50 distribution, potency/effect, log2FC analyses, NetPert/BC/degree vs assay, assay table, per-gene panels.
+- `04_spotlights/` (40): one card per top-40 NetPert gene (ranks, drugs, assay status).
+- `05_drugs/` (12): compounds-per-gene, top compounds, druggable enrichment, top druggable list, per-target compound charts.
+- `06_compare/` (11): pairwise scatters, rank shifts, winners/losers, intermediates/responses-only, agreement + assay-rho summaries.
+- `07_overview/` (2): summary table, pipeline schematic.
+- Plus the 8 originals at `results/figures/` root.
+- Regenerate: `python src/make_extra_figures.py` (originals) and `python src/make_100_figures.py` (the 100; needs IID download for 4 full-network panels, skipped gracefully if absent).
 
 ## Reproduce
 

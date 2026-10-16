@@ -1,0 +1,502 @@
+[
+ {
+  "file": "01_rankings/top10_netpert.png",
+  "title": "Top-10 NetPert genes (real Twist1 network)",
+  "caption": "Highest NetPert weights; all intermediates."
+ },
+ {
+  "file": "01_rankings/top30_netpert.png",
+  "title": "Top-30 NetPert genes (real Twist1 network)",
+  "caption": "Weights decay smoothly past the top hubs."
+ },
+ {
+  "file": "01_rankings/top50_netpert.png",
+  "title": "Top-50 NetPert genes (real Twist1 network)",
+  "caption": "Top-50 of 1,200 ranked subnetwork genes."
+ },
+ {
+  "file": "01_rankings/top100_netpert.png",
+  "title": "Top-100 NetPert genes (real Twist1 network)",
+  "caption": "The full head of the ranking; long tail beyond."
+ },
+ {
+  "file": "01_rankings/top20_bcsub.png",
+  "title": "Top-20 betweenness-subset genes (real subnetwork)",
+  "caption": "Driver-to-response betweenness on the same subnetwork."
+ },
+ {
+  "file": "01_rankings/top20_bcfull.png",
+  "title": "Top-20 betweenness genes (real full 17k network)",
+  "caption": "Betweenness on the full IID+TRRUST network."
+ },
+ {
+  "file": "01_rankings/top20_hubs.png",
+  "title": "Top-20 hubs by out-degree (real full network)",
+  "caption": "Raw connectivity leaders for hub-bias context."
+ },
+ {
+  "file": "01_rankings/rank_curve_netpert.png",
+  "title": "NetPert rank-weight curve",
+  "caption": "Steep head (hub mediators), long tail of weak contributors."
+ },
+ {
+  "file": "01_rankings/rank_curve_bc.png",
+  "title": "Betweenness rank-weight curve",
+  "caption": "Same subnetwork, driver-to-response betweenness."
+ },
+ {
+  "file": "01_rankings/weights_by_class.png",
+  "title": "NetPert weight by gene class",
+  "caption": "Intermediates carry the weight; responses score low (excluded from own term)."
+ },
+ {
+  "file": "01_rankings/topk_overlap.png",
+  "title": "Top-k overlap between methods",
+  "caption": "NetPert agrees more with betweenness than with raw degree at every cutoff."
+ },
+ {
+  "file": "02_network/response_coverage.png",
+  "title": "Response coverage",
+  "caption": "168/182 DE genes present; 14 genuinely absent (interactome incompleteness)."
+ },
+ {
+  "file": "02_network/missing_responses.png",
+  "title": "Unconnected responses",
+  "caption": "Mostly RIKEN / uncharacterised genes plus Gpr110, Fut2, Lphn3."
+ },
+ {
+  "file": "02_network/subnetwork_composition.png",
+  "title": "Subnetwork composition",
+  "caption": "1 driver + intermediates + 168 in-network responses."
+ },
+ {
+  "file": "02_network/degree_dist_sub.png",
+  "title": "Out-degree distribution",
+  "caption": "Long-tailed connectivity, typical of interactomes."
+ },
+ {
+  "file": "02_network/weight_hist_by_class.png",
+  "title": "Weight histograms by class",
+  "caption": "Response weights cluster near zero by construction."
+ },
+ {
+  "file": "02_network/degree_dist_full.png",
+  "title": "Full-network degree distribution",
+  "caption": "17k-gene real interactome; long tail."
+ },
+ {
+  "file": "02_network/twist1_degree.png",
+  "title": "Twist1 connectivity context",
+  "caption": "Twist1 has 199 out-neighbours in the real network."
+ },
+ {
+  "file": "02_network/driver_distances.png",
+  "title": "Driver-to-response distances",
+  "caption": "164 in-network responses reachable; all within a few steps."
+ },
+ {
+  "file": "02_network/mediator_frequency.png",
+  "title": "Shortest-path mediator frequency",
+  "caption": "Real nodes most often on driver-to-response shortest paths."
+ },
+ {
+  "file": "02_network/edge_provenance.png",
+  "title": "Edge provenance",
+  "caption": "PPI dominates; TRRUST adds 5,551 unique directed regulatory edges."
+ },
+ {
+  "file": "02_network/response_direction.png",
+  "title": "Response direction",
+  "caption": "97 up- vs 67 down-regulated in Twist1 organoids."
+ },
+ {
+  "file": "03_assays/dissemination_bars.png",
+  "title": "Dissemination readout",
+  "caption": "Sema5a 0% (G\u00f6-6976) to Col6a1 94.7%."
+ },
+ {
+  "file": "03_assays/ic50_dist.png",
+  "title": "IC50 distribution",
+  "caption": "Nanomolar potencies from the dissemination screen."
+ },
+ {
+  "file": "03_assays/ic50_vs_dissemination.png",
+  "title": "Potency vs effect",
+  "caption": "Real IC50 against real dissemination."
+ },
+ {
+  "file": "03_assays/logfc_vs_dissemination.png",
+  "title": "Expression vs effect",
+  "caption": "DE magnitude does not predict inhibition in this subset."
+ },
+ {
+  "file": "03_assays/netpert_vs_assay.png",
+  "title": "NetPert vs assay",
+  "caption": "Honest null: rho=+0.31, p=0.21 (responses, not intermediates)."
+ },
+ {
+  "file": "03_assays/bc_vs_assay.png",
+  "title": "Betweenness vs assay",
+  "caption": "Also null (rho=-0.10) \u2014 same underpowered response-only subset."
+ },
+ {
+  "file": "03_assays/netpert_vs_logfc.png",
+  "title": "NetPert vs expression",
+  "caption": "Ranking is not a proxy for differential expression."
+ },
+ {
+  "file": "03_assays/netpert_vs_abslogfc.png",
+  "title": "NetPert vs |log2FC|",
+  "caption": "Strong DE genes are not systematically top-ranked."
+ },
+ {
+  "file": "03_assays/up_vs_down_weights.png",
+  "title": "Up vs down weights",
+  "caption": "No systematic up/down bias in NetPert weights."
+ },
+ {
+  "file": "03_assays/degree_vs_assay.png",
+  "title": "Connectivity vs assay",
+  "caption": "Hubness alone does not explain inhibition."
+ },
+ {
+  "file": "03_assays/assay_table.png",
+  "title": "Assay table",
+  "caption": "All 18 genes with a real dissemination readout."
+ },
+ {
+  "file": "03_assays/assay_panels_strongest.png",
+  "title": "Assay panels (strongest)",
+  "caption": "Real dissemination % with NetPert ranks, strongest 9 of 18."
+ },
+ {
+  "file": "03_assays/assay_panels_weakest.png",
+  "title": "Assay panels (weakest)",
+  "caption": "Real dissemination % with NetPert ranks, weakest 9 of 18."
+ },
+ {
+  "file": "04_spotlights/spot_01_Pdgfra.png",
+  "title": "Spotlight #1: Pdgfra",
+  "caption": "Rank #1 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_02_Htt.png",
+  "title": "Spotlight #2: Htt",
+  "caption": "Rank #2 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_03_Tp53.png",
+  "title": "Spotlight #3: Tp53",
+  "caption": "Rank #3 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_04_Ctnnb1.png",
+  "title": "Spotlight #4: Ctnnb1",
+  "caption": "Rank #4 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_05_Cdh1.png",
+  "title": "Spotlight #5: Cdh1",
+  "caption": "Rank #5 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_06_Zranb1.png",
+  "title": "Spotlight #6: Zranb1",
+  "caption": "Rank #6 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_07_Vim.png",
+  "title": "Spotlight #7: Vim",
+  "caption": "Rank #7 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_08_Ppia.png",
+  "title": "Spotlight #8: Ppia",
+  "caption": "Rank #8 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_09_Stat3.png",
+  "title": "Spotlight #9: Stat3",
+  "caption": "Rank #9 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_10_Clu.png",
+  "title": "Spotlight #10: Clu",
+  "caption": "Rank #10 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_11_Stub1.png",
+  "title": "Spotlight #11: Stub1",
+  "caption": "Rank #11 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_12_Nfkb1.png",
+  "title": "Spotlight #12: Nfkb1",
+  "caption": "Rank #12 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_13_Ep300.png",
+  "title": "Spotlight #13: Ep300",
+  "caption": "Rank #13 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_14_Sox2.png",
+  "title": "Spotlight #14: Sox2",
+  "caption": "Rank #14 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_15_Col2a1.png",
+  "title": "Spotlight #15: Col2a1",
+  "caption": "Rank #15 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_16_Rela.png",
+  "title": "Spotlight #16: Rela",
+  "caption": "Rank #16 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_17_Kif23.png",
+  "title": "Spotlight #17: Kif23",
+  "caption": "Rank #17 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_18_Hif1a.png",
+  "title": "Spotlight #18: Hif1a",
+  "caption": "Rank #18 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_19_Hdac6.png",
+  "title": "Spotlight #19: Hdac6",
+  "caption": "Rank #19 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_20_H4c1.png",
+  "title": "Spotlight #20: H4c1",
+  "caption": "Rank #20 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_21_Pdgfrb.png",
+  "title": "Spotlight #21: Pdgfrb",
+  "caption": "Rank #21 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_22_Stau1.png",
+  "title": "Spotlight #22: Stau1",
+  "caption": "Rank #22 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_23_Hdac1.png",
+  "title": "Spotlight #23: Hdac1",
+  "caption": "Rank #23 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_24_Ikbkb.png",
+  "title": "Spotlight #24: Ikbkb",
+  "caption": "Rank #24 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_25_Tnf.png",
+  "title": "Spotlight #25: Tnf",
+  "caption": "Rank #25 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_26_Eif2b5.png",
+  "title": "Spotlight #26: Eif2b5",
+  "caption": "Rank #26 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_27_Cul4a.png",
+  "title": "Spotlight #27: Cul4a",
+  "caption": "Rank #27 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_28_Hdac2.png",
+  "title": "Spotlight #28: Hdac2",
+  "caption": "Rank #28 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_29_Esr1.png",
+  "title": "Spotlight #29: Esr1",
+  "caption": "Rank #29 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_30_Ppp2ca.png",
+  "title": "Spotlight #30: Ppp2ca",
+  "caption": "Rank #30 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_31_Mcm7.png",
+  "title": "Spotlight #31: Mcm7",
+  "caption": "Rank #31 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_32_Zyx.png",
+  "title": "Spotlight #32: Zyx",
+  "caption": "Rank #32 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_33_Tcf4.png",
+  "title": "Spotlight #33: Tcf4",
+  "caption": "Rank #33 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_34_Tcf3.png",
+  "title": "Spotlight #34: Tcf3",
+  "caption": "Rank #34 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_35_Fos.png",
+  "title": "Spotlight #35: Fos",
+  "caption": "Rank #35 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_36_Ilf3.png",
+  "title": "Spotlight #36: Ilf3",
+  "caption": "Rank #36 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_37_Obsl1.png",
+  "title": "Spotlight #37: Obsl1",
+  "caption": "Rank #37 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_38_Epha3.png",
+  "title": "Spotlight #38: Epha3",
+  "caption": "Rank #38 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_39_Trp53.png",
+  "title": "Spotlight #39: Trp53",
+  "caption": "Rank #39 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "04_spotlights/spot_40_Hk2.png",
+  "title": "Spotlight #40: Hk2",
+  "caption": "Rank #40 NetPert intermediate with ranks, drugs and assay status."
+ },
+ {
+  "file": "05_drugs/drugs_per_gene.png",
+  "title": "Compounds per gene",
+  "caption": "Most genes map to 0; mapped ones carry up to 10 shown compounds."
+ },
+ {
+  "file": "05_drugs/top_compounds.png",
+  "title": "Top compounds",
+  "caption": "Most promiscuous mappers within the 1,200-gene subnetwork."
+ },
+ {
+  "file": "05_drugs/druggable_weights.png",
+  "title": "Druggable vs other",
+  "caption": "Whether mapped targets score higher than unmapped genes."
+ },
+ {
+  "file": "05_drugs/top_druggable.png",
+  "title": "Top druggable intermediates",
+  "caption": "Prioritised genes that already have compounds."
+ },
+ {
+  "file": "05_drugs/druggable_enrichment.png",
+  "title": "Druggable enrichment",
+  "caption": "Dashed line = background rate; above = enriched."
+ },
+ {
+  "file": "05_drugs/compounds_Pdgfra.png",
+  "title": "Compounds: Pdgfra",
+  "caption": "10 mapped compounds for Pdgfra."
+ },
+ {
+  "file": "05_drugs/compounds_Stat3.png",
+  "title": "Compounds: Stat3",
+  "caption": "10 mapped compounds for Stat3."
+ },
+ {
+  "file": "05_drugs/compounds_Rela.png",
+  "title": "Compounds: Rela",
+  "caption": "8 mapped compounds for Rela."
+ },
+ {
+  "file": "05_drugs/compounds_Hdac6.png",
+  "title": "Compounds: Hdac6",
+  "caption": "10 mapped compounds for Hdac6."
+ },
+ {
+  "file": "05_drugs/compounds_Ctnnb1.png",
+  "title": "Compounds: Ctnnb1",
+  "caption": "6 mapped compounds for Ctnnb1."
+ },
+ {
+  "file": "05_drugs/compounds_Nfkb1.png",
+  "title": "Compounds: Nfkb1",
+  "caption": "6 mapped compounds for Nfkb1."
+ },
+ {
+  "file": "05_drugs/compounds_Hif1a.png",
+  "title": "Compounds: Hif1a",
+  "caption": "11 mapped compounds for Hif1a."
+ },
+ {
+  "file": "06_compare/scatter_NetPert_weight_vs_BCsub_weight.png",
+  "title": "NetPert vs BC-sub",
+  "caption": "Spearman rho=0.58 over 1200 real genes."
+ },
+ {
+  "file": "06_compare/scatter_NetPert_weight_vs_BCfull_weight.png",
+  "title": "NetPert vs BC-full",
+  "caption": "Spearman rho=0.59 over 1200 real genes."
+ },
+ {
+  "file": "06_compare/scatter_NetPert_weight_vs_outdegree_full.png",
+  "title": "NetPert vs out-degree",
+  "caption": "Spearman rho=0.51 over 1200 real genes."
+ },
+ {
+  "file": "06_compare/scatter_BCsub_weight_vs_BCfull_weight.png",
+  "title": "BC-sub vs BC-full",
+  "caption": "Spearman rho=1.00 over 1200 real genes."
+ },
+ {
+  "file": "06_compare/rank_shifts.png",
+  "title": "Rank shifts",
+  "caption": "Where perturbation theory disagrees with shortest-path counting."
+ },
+ {
+  "file": "06_compare/winners_netpert.png",
+  "title": "NetPert winners",
+  "caption": "Genes perturbation theory lifts above shortest-path ranking."
+ },
+ {
+  "file": "06_compare/losers_netpert.png",
+  "title": "NetPert losers",
+  "caption": "Shortest-path hubs that diffusion down-weights."
+ },
+ {
+  "file": "06_compare/intermediates_only.png",
+  "title": "Intermediates only",
+  "caption": "Method agreement on the genes NetPert is built to prioritise."
+ },
+ {
+  "file": "06_compare/responses_only.png",
+  "title": "Responses only",
+  "caption": "Both methods score responses low; different floors."
+ },
+ {
+  "file": "06_compare/agreement_summary.png",
+  "title": "Agreement summary",
+  "caption": "All pairwise rank/weight agreements in one place."
+ },
+ {
+  "file": "06_compare/assay_rho_by_method.png",
+  "title": "Assay rho by method",
+  "caption": "No method predicts the 18-gene response-only readout; honest null."
+ },
+ {
+  "file": "07_overview/summary_table.png",
+  "title": "Summary table",
+  "caption": "Every number from real inputs."
+ },
+ {
+  "file": "07_overview/pipeline.png",
+  "title": "Pipeline schematic",
+  "caption": "Six stages, no invented inputs."
+ }
+]
