@@ -1,0 +1,155 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>18. Data tables — NetPert Twist1 Atlas</title><style>:root{--bg:#fafaf9;--fg:#1c1917;--mu:#57534e;--ac:#c2410c;--bd:#e7e5e4;--cd:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1917;--fg:#f5f5f4;--mu:#a8a29e;--ac:#fb923c;--bd:#3f3b38;--cd:#292524}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 Georgia,"Times New Roman",serif}main{max-width:780px;margin:0 auto;padding:2rem 1.2rem 4rem}
+h1{font-size:2rem;line-height:1.2;margin:.2rem 0}h2{margin-top:2.4rem;border-bottom:1px solid var(--bd);padding-bottom:.3rem;font-size:1.3rem}
+.k{color:var(--ac);font:600 .75rem system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}.mu{color:var(--mu)}
+figure{margin:1.5rem 0;background:#fff;border:1px solid var(--bd);border-radius:8px;padding:.6rem}img{max-width:100%;height:auto;display:block}figcaption{font:.85rem/1.5 system-ui,sans-serif;color:#44403c;padding:.4rem .3rem 0}
+.box{background:var(--cd);border:1px solid var(--bd);border-left:4px solid var(--ac);border-radius:6px;padding:.8rem 1rem;font:.92rem/1.55 system-ui,sans-serif}
+.sc{overflow-x:auto}.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}.g2 figure{margin:.5rem 0}table{border-collapse:collapse;width:100%;font:.9rem system-ui,sans-serif}th,td{text-align:left;padding:.4rem .6rem;border-bottom:1px solid var(--bd)}code{font-size:.9em}a{color:var(--ac)}.wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:1.5rem;padding:0 1rem}main{margin:0;max-width:780px;width:100%;box-sizing:border-box}h2{scroll-margin-top:1rem}
+#toc{position:sticky;top:1rem;align-self:start;max-height:calc(100vh - 2rem);overflow:auto;font:.82rem/1.4 system-ui,sans-serif;padding-top:2rem}#toc ol{list-style:none;margin:.4rem 0 0;padding:0}#toc a{display:block;padding:.25rem .5rem;border-left:2px solid var(--bd);color:var(--mu);text-decoration:none}#toc a.on{color:var(--ac);border-color:var(--ac);font-weight:600}#toc summary{cursor:pointer;font-weight:700}
+.wd{background:var(--cd);border:1px solid var(--bd);border-radius:8px;padding:.6rem}.ctl{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;font:.85rem system-ui,sans-serif;margin-top:.5rem}.ctl input[type=range]{flex:1;min-width:140px}.ctl button{font:inherit;padding:.3rem .8rem;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:var(--fg);cursor:pointer}
+@media(max-width:960px){.wrap{display:block}#toc{position:static;max-height:none;padding-top:1rem}}</style><style>nav.pg{font:.85rem system-ui,sans-serif;display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin:1rem 0}nav.pg a{text-decoration:none}.box{background:#fff;border:1px solid #e7e5e4;border-left:4px solid #c2410c;border-radius:6px;padding:.8rem 1rem;font:.92rem/1.55 system-ui,sans-serif}</style></head><body><main style="max-width:900px;margin:0 auto;padding:2rem 1.2rem 4rem"><nav class="pg"><a href="../index.html">&larr; Atlas</a> · <a href="index.html">All sections</a> · <a href="s17.html">&larr; 17. Reproducibility and references</a> · <a href="s19.html">19. Gene-level data explorer &rarr;</a></nav><h1>18. Data tables</h1><h2 id="s18">18. Data tables</h2>
+<p>These tables are the real-network results behind the figures — every entry computed on the Twist1 IID+TRRUST data.</p>
+<h3>18.1 Per-network results (40 scale-free networks, Fig. 1)</h3><div class="sc" style="max-height:320px;overflow:auto"><table><tr><th>Rank</th><th>Gene</th><th>NetPert weight</th><th>BC-sub rank</th><th>Out-degree</th><th>Drugs</th></tr>
+<tr><td>1</td><td>Pdgfra</td><td>2.13e-02</td><td>3</td><td>373</td><td>AC-710, BMS-536924, CP-673451</td></tr>
+<tr><td>2</td><td>Htt</td><td>1.80e-02</td><td>1</td><td>1523</td><td>—</td></tr>
+<tr><td>3</td><td>Tp53</td><td>1.76e-02</td><td>4</td><td>2321</td><td>—</td></tr>
+<tr><td>4</td><td>Ctnnb1</td><td>1.53e-02</td><td>6</td><td>1236</td><td>CCT-031374, ICG-001, PNU-74654</td></tr>
+<tr><td>5</td><td>Cdh1</td><td>1.51e-02</td><td>5</td><td>933</td><td>—</td></tr>
+<tr><td>6</td><td>Zranb1</td><td>1.43e-02</td><td>2</td><td>3868</td><td>—</td></tr>
+<tr><td>7</td><td>Vim</td><td>1.37e-02</td><td>7</td><td>863</td><td>—</td></tr>
+<tr><td>8</td><td>Ppia</td><td>1.36e-02</td><td>27</td><td>883</td><td>L-proline, TMN-355, cyclosporin-A</td></tr>
+<tr><td>9</td><td>Stat3</td><td>1.28e-02</td><td>10</td><td>618</td><td>APcK-110, STAT3-inhibitor-VI, WP1066</td></tr>
+<tr><td>10</td><td>Clu</td><td>1.28e-02</td><td>20</td><td>310</td><td>—</td></tr>
+<tr><td>11</td><td>Stub1</td><td>1.26e-02</td><td>25</td><td>691</td><td>—</td></tr>
+<tr><td>12</td><td>Nfkb1</td><td>1.25e-02</td><td>17</td><td>683</td><td>SP-100030, andrographolide, arglabin</td></tr>
+<tr><td>13</td><td>Ep300</td><td>1.15e-02</td><td>14</td><td>1371</td><td>C646, I-CBP-112, SGC-CBP30</td></tr>
+<tr><td>14</td><td>Sox2</td><td>1.14e-02</td><td>8</td><td>1386</td><td>—</td></tr>
+<tr><td>15</td><td>Col2a1</td><td>1.08e-02</td><td>9</td><td>70</td><td>—</td></tr>
+<tr><td>16</td><td>Rela</td><td>1.08e-02</td><td>19</td><td>679</td><td>BAY-11-7082, NFKB-activation-inhibitor-II, acetylcysteine</td></tr>
+<tr><td>17</td><td>Kif23</td><td>1.07e-02</td><td>21</td><td>965</td><td>—</td></tr>
+<tr><td>18</td><td>Hif1a</td><td>1.04e-02</td><td>40</td><td>464</td><td>2-methoxyestradiol, 3, 3'-diindolylmethane</td></tr>
+<tr><td>19</td><td>Hdac6</td><td>1.02e-02</td><td>15</td><td>861</td><td>ACY-1215, JNJ-26481585, PCI-24781</td></tr>
+<tr><td>20</td><td>H4c1</td><td>1.02e-02</td><td>12</td><td>1833</td><td>—</td></tr>
+<tr><td>21</td><td>Pdgfrb</td><td>1.01e-02</td><td>44</td><td>304</td><td>AC-710, BMS-536924, CP-673451</td></tr>
+<tr><td>22</td><td>Stau1</td><td>9.53e-03</td><td>13</td><td>1463</td><td>—</td></tr>
+<tr><td>23</td><td>Hdac1</td><td>9.46e-03</td><td>54</td><td>1116</td><td>4SC-202, ACY-1215, AR-42</td></tr>
+<tr><td>24</td><td>Ikbkb</td><td>9.44e-03</td><td>50</td><td>302</td><td>AZD3264, BMS-345541, IKK-16</td></tr>
+<tr><td>25</td><td>Tnf</td><td>9.16e-03</td><td>18</td><td>387</td><td>CPI-1189, JTE-607, SB-203580</td></tr>
+<tr><td>26</td><td>Eif2b5</td><td>8.66e-03</td><td>35</td><td>207</td><td>—</td></tr>
+<tr><td>27</td><td>Cul4a</td><td>8.58e-03</td><td>26</td><td>790</td><td>—</td></tr>
+<tr><td>28</td><td>Hdac2</td><td>8.53e-03</td><td>67</td><td>878</td><td>ACY-1215, CUDC-907, JNJ-26481585</td></tr>
+<tr><td>29</td><td>Esr1</td><td>8.39e-03</td><td>11</td><td>2305</td><td>17-hydroxyprogesterone-caproate, AZD9496, GDC-0810</td></tr>
+<tr><td>30</td><td>Ppp2ca</td><td>8.32e-03</td><td>48</td><td>516</td><td>vitamin-E</td></tr></table></div><details><summary>Copy as CSV</summary><pre style='overflow:auto;font-size:.75rem'>Rank,Gene,NetPert weight,BC-sub rank,Out-degree,Drugs
+1,Pdgfra,2.13e-02,3,373,AC-710, BMS-536924, CP-673451
+2,Htt,1.80e-02,1,1523,—
+3,Tp53,1.76e-02,4,2321,—
+4,Ctnnb1,1.53e-02,6,1236,CCT-031374, ICG-001, PNU-74654
+5,Cdh1,1.51e-02,5,933,—
+6,Zranb1,1.43e-02,2,3868,—
+7,Vim,1.37e-02,7,863,—
+8,Ppia,1.36e-02,27,883,L-proline, TMN-355, cyclosporin-A
+9,Stat3,1.28e-02,10,618,APcK-110, STAT3-inhibitor-VI, WP1066
+10,Clu,1.28e-02,20,310,—
+11,Stub1,1.26e-02,25,691,—
+12,Nfkb1,1.25e-02,17,683,SP-100030, andrographolide, arglabin
+13,Ep300,1.15e-02,14,1371,C646, I-CBP-112, SGC-CBP30
+14,Sox2,1.14e-02,8,1386,—
+15,Col2a1,1.08e-02,9,70,—
+16,Rela,1.08e-02,19,679,BAY-11-7082, NFKB-activation-inhibitor-II, acetylcysteine
+17,Kif23,1.07e-02,21,965,—
+18,Hif1a,1.04e-02,40,464,2-methoxyestradiol, 3, 3'-diindolylmethane
+19,Hdac6,1.02e-02,15,861,ACY-1215, JNJ-26481585, PCI-24781
+20,H4c1,1.02e-02,12,1833,—
+21,Pdgfrb,1.01e-02,44,304,AC-710, BMS-536924, CP-673451
+22,Stau1,9.53e-03,13,1463,—
+23,Hdac1,9.46e-03,54,1116,4SC-202, ACY-1215, AR-42
+24,Ikbkb,9.44e-03,50,302,AZD3264, BMS-345541, IKK-16
+25,Tnf,9.16e-03,18,387,CPI-1189, JTE-607, SB-203580
+26,Eif2b5,8.66e-03,35,207,—
+27,Cul4a,8.58e-03,26,790,—
+28,Hdac2,8.53e-03,67,878,ACY-1215, CUDC-907, JNJ-26481585
+29,Esr1,8.39e-03,11,2305,17-hydroxyprogesterone-caproate, AZD9496, GDC-0810
+30,Ppp2ca,8.32e-03,48,516,vitamin-E</pre></details>
+<h3>18.2 Top 30 ranked genes on the 120-node network (Figs. 4&ndash;5, section 12)</h3><div class="sc" style="max-height:320px;overflow:auto"><table><tr><th>Gene</th><th>log2FC</th><th>Drug</th><th>IC50 (nM)</th><th>Dissemination %</th><th>NetPert rank</th></tr>
+<tr><td>Sema5a</td><td>2.77</td><td>Gö-6976</td><td>11.48</td><td>0.0</td><td>1133</td></tr>
+<tr><td>Ncam1</td><td>3.10</td><td>SB-525334</td><td>77.51</td><td>13.6</td><td>962</td></tr>
+<tr><td>Emilin1</td><td>3.46</td><td>Taxol</td><td>6.012</td><td>15.4</td><td>1089</td></tr>
+<tr><td>Pcolce</td><td>4.17</td><td>Sorafenib</td><td>151.2</td><td>26.7</td><td>1100</td></tr>
+<tr><td>Ptprv</td><td>2.53</td><td>kb-NB142-70</td><td>106.9</td><td>31.7</td><td>1196</td></tr>
+<tr><td>Olfml3</td><td>3.44</td><td>Genistein</td><td>614</td><td>33.3</td><td>1172</td></tr>
+<tr><td>Fut1</td><td>4.34</td><td>AMD3100</td><td>16280</td><td>50.0</td><td>1179</td></tr>
+<tr><td>Tgfbi</td><td>2.73</td><td>Batimastat</td><td>1765</td><td>50.0</td><td>1135</td></tr>
+<tr><td>Plekhg1</td><td>2.34</td><td>C021.2HCl</td><td>992.3</td><td>50.0</td><td>1102</td></tr>
+<tr><td>Spock2</td><td>3.08</td><td>Gö-6983</td><td>1043</td><td>52.3</td><td>1171</td></tr>
+<tr><td>Cbfa2t3</td><td>4.27</td><td>CP 690550</td><td>1397</td><td>59.1</td><td>1021</td></tr>
+<tr><td>Mme</td><td>3.19</td><td>PF-543</td><td>10822</td><td>64.7</td><td>149</td></tr>
+<tr><td>Unc5b</td><td>3.32</td><td>SKI-5C</td><td>197165</td><td>70.0</td><td>1087</td></tr>
+<tr><td>Plxna4</td><td>2.83</td><td>GNF 5837</td><td>31084</td><td>72.9</td><td>1043</td></tr>
+<tr><td>Fat4</td><td>4.28</td><td>CID-755636</td><td>3369</td><td>81.2</td><td>1109</td></tr>
+<tr><td>Cacna1c</td><td>3.06</td><td>CID-2011756</td><td>9787</td><td>81.2</td><td>447</td></tr>
+<tr><td>Gramd1b</td><td>2.76</td><td>GM6001</td><td>36749</td><td>83.3</td><td>1123</td></tr>
+<tr><td>Col6a1</td><td>1.91</td><td>Isradipine</td><td>32800</td><td>94.7</td><td>1067</td></tr></table></div><details><summary>Copy as CSV</summary><pre style='overflow:auto;font-size:.75rem'>Gene,log2FC,Drug,IC50 (nM),Dissemination %,NetPert rank
+Sema5a,2.77,Gö-6976,11.48,0.0,1133
+Ncam1,3.10,SB-525334,77.51,13.6,962
+Emilin1,3.46,Taxol,6.012,15.4,1089
+Pcolce,4.17,Sorafenib,151.2,26.7,1100
+Ptprv,2.53,kb-NB142-70,106.9,31.7,1196
+Olfml3,3.44,Genistein,614,33.3,1172
+Fut1,4.34,AMD3100,16280,50.0,1179
+Tgfbi,2.73,Batimastat,1765,50.0,1135
+Plekhg1,2.34,C021.2HCl,992.3,50.0,1102
+Spock2,3.08,Gö-6983,1043,52.3,1171
+Cbfa2t3,4.27,CP 690550,1397,59.1,1021
+Mme,3.19,PF-543,10822,64.7,149
+Unc5b,3.32,SKI-5C,197165,70.0,1087
+Plxna4,2.83,GNF 5837,31084,72.9,1043
+Fat4,4.28,CID-755636,3369,81.2,1109
+Cacna1c,3.06,CID-2011756,9787,81.2,447
+Gramd1b,2.76,GM6001,36749,83.3,1123
+Col6a1,1.91,Isradipine,32800,94.7,1067</pre></details>
+<h3>18.3 Accuracy by network type (AUROC, Figs. 8 and 16)</h3><div class="sc"><table><tr><th>Score pair</th><th>Spearman rho</th><th>Top-20 overlap</th></tr>
+<tr><td>NetPert – BC (driver-to-response)</td><td>0.58</td><td>16/20</td></tr>
+<tr><td>NetPert – BC (full network)</td><td>0.59</td><td>17/20</td></tr>
+<tr><td>NetPert – out-degree</td><td>0.51</td><td>2/20</td></tr>
+<tr><td>NetPert – driver PPR</td><td>0.79</td><td>6/20</td></tr>
+<tr><td>BC (driver-to-response) – BC (full)</td><td>-0.82</td><td>18/20</td></tr></table></div><details><summary>Copy as CSV</summary><pre style='overflow:auto;font-size:.75rem'>Score pair,Spearman rho,Top-20 overlap
+NetPert – BC (driver-to-response),0.58,16/20
+NetPert – BC (full network),0.59,17/20
+NetPert – out-degree,0.51,2/20
+NetPert – driver PPR,0.79,6/20
+BC (driver-to-response) – BC (full),-0.82,18/20</pre></details>
+<h3>18.4 Accuracy by number of responses (AUROC, Fig. 9)</h3><div class="sc"><table><tr><th>Edges removed</th><th>NetPert rho</th><th>Betweenness rho</th><th>NetPert top-20 overlap</th></tr>
+<tr><td>10%</td><td>0.948 ± 0.004</td><td>0.886 ± 0.009</td><td>17.7/20</td></tr>
+<tr><td>25%</td><td>0.889 ± 0.007</td><td>0.723 ± 0.003</td><td>11.0/20</td></tr>
+<tr><td>50%</td><td>0.775 ± 0.004</td><td>0.520 ± 0.020</td><td>9.7/20</td></tr></table></div>
+<h3>18.5 Stability under rewiring (Spearman &rho;, Fig. 10)</h3><div class="sc"><table><tr><th>Relaxation r</th><th>Spearman vs r = 0.5</th><th>Top-20 overlap</th></tr>
+<tr><td>0.10</td><td>0.9976</td><td>18/20</td></tr>
+<tr><td>0.25</td><td>0.9992</td><td>18/20</td></tr>
+<tr><td>0.50</td><td>1.0000</td><td>20/20</td></tr>
+<tr><td>0.75</td><td>0.9991</td><td>15/20</td></tr>
+<tr><td>0.90</td><td>0.9966</td><td>11/20</td></tr>
+<tr><td>0.99</td><td>0.9872</td><td>5/20</td></tr></table></div>
+<h3>18.6 Accuracy by network type &times; number of responses (AUROC, 8 networks per cell)</h3><div class="sc" style="max-height:360px;overflow:auto"><table><tr><th>Path type</th><th>Genes</th><th>Median weight</th><th>In top-20</th></tr>
+<tr><td>DIR (driver- and response-adjacent)</td><td>154</td><td>3.80e-03</td><td>20/20</td></tr>
+<tr><td>DI (driver-adjacent only)</td><td>51</td><td>2.39e-04</td><td>0/20</td></tr>
+<tr><td>IR (response-adjacent only)</td><td>838</td><td>1.25e-04</td><td>0/20</td></tr>
+<tr><td>I (neither)</td><td>156</td><td>2.65e-06</td><td>0/20</td></tr></table></div><details><summary>Copy as CSV</summary><pre style='overflow:auto;font-size:.75rem'>Path type,Genes,Median weight,In top-20
+DIR (driver- and response-adjacent),154,3.80e-03,20/20
+DI (driver-adjacent only),51,2.39e-04,0/20
+IR (response-adjacent only),838,1.25e-04,0/20
+I (neither),156,2.65e-06,0/20</pre></details>
+<h3>18.7 Parameter sweep: relaxation r &times; time steps n_t (20 scale-free networks)</h3><p class="mu">Each cell shows mean AUROC / mean top-20 overlap with the default setting (r = 0.5, n_t = 16).</p><div class="sc"><table><tr><th>Check</th><th>Value</th></tr>
+<tr><td>Drop TRRUST directed edges (531 in subnetwork)</td><td>rank rho = 0.945; top-20 overlap 16/20</td></tr>
+<tr><td>DIR genes in top-10</td><td>10/10</td></tr>
+<tr><td>DIR genes in top-20</td><td>20/20</td></tr>
+<tr><td>DIR genes in top-50</td><td>50/50</td></tr>
+<tr><td>DIR genes in top-100</td><td>100/100</td></tr>
+<tr><td>DIR genes in top-200</td><td>149/200</td></tr></table></div><details><summary>Copy as CSV</summary><pre style='overflow:auto;font-size:.75rem'>Check,Value
+Drop TRRUST directed edges (531 in subnetwork),rank rho = 0.945; top-20 overlap 16/20
+DIR genes in top-10,10/10
+DIR genes in top-20,20/20
+DIR genes in top-50,50/50
+DIR genes in top-100,100/100
+DIR genes in top-200,149/200</pre></details>
+<nav class="pg"><a href="../index.html">&larr; Atlas</a> · <a href="index.html">All sections</a> · <a href="s17.html">&larr; 17. Reproducibility and references</a> · <a href="s19.html">19. Gene-level data explorer &rarr;</a></nav></main></body></html>
