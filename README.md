@@ -72,17 +72,18 @@ mismatched by construction (e.g. Sema5a shows 0% dissemination under Gö-6976/Pr
 inhibition yet ranks 1133 as a response, as expected). The value here is the
 real-data ranking + drug list, not this correlation.
 
-Figures — 112 PNGs in `results/figures/` grouped by folder (see `gallery.html` on the site, or `results/figures/gallery.json` manifest):
-- `01_rankings/` (11): top-10/20/30/50/100 bars, BC + hub leaderboards, rank curves, class split, top-k overlap.
-- `02_network/` (11): response coverage, the 14 missing genes, composition, degree distributions (sub + full 17k), Twist1 degree context, driver-to-response distances, mediator frequency, edge provenance, response direction.
-- `03_assays/` (13): dissemination bars, IC50 distribution, potency/effect, log2FC analyses, NetPert/BC/degree vs assay, assay table, per-gene panels.
-- `04_spotlights/` (40): one card per top-40 NetPert gene (ranks, drugs, assay status).
-- `05_drugs/` (12): compounds-per-gene, top compounds, druggable enrichment, top druggable list, per-target compound charts.
-- `06_compare/` (11): pairwise scatters, rank shifts, winners/losers, intermediates/responses-only, agreement + assay-rho summaries.
-- `07_overview/` (2): summary table, pipeline schematic.
-- `08_report/` (12): report-style analogues computed on real data — score concentration curve, method-agreement panels, edge-removal robustness (NetPert stays above betweenness to 50% removed), relaxation sweep, hub-bias panels, weight-vs-distance, assay waterfall, top-30 rank heatmap, path-type counts/weights/DIR-enrichment, scorecard table.
-- Plus the 8 originals at `results/figures/` root.
-- Regenerate: `python src/make_extra_figures.py` (originals), `python src/make_100_figures.py` (the 100) and `python src/make_report_style_figures.py` (the 12; needs IID download for full-network panels, skipped gracefully if absent).
+Figures in `results/figures/` grouped by folder (see `gallery.html` on the site, or `results/figures/gallery.json` manifest):
+- `01_rankings/`: top-10/20/30/50/100 bars, BC + hub leaderboards, rank curves, class split, top-k overlap.
+- `02_network/`: response coverage, the missing genes, composition, degree distributions, Twist1 degree context, driver-to-response distances, mediator frequency, edge provenance, response direction.
+- `03_assays/`: dissemination bars, IC50 distribution, potency/effect, log2FC analyses, NetPert/BC/degree vs assay, assay table, per-gene panels.
+- `04_spotlights/`: one card per top-ranked NetPert gene (ranks, drugs, assay status).
+- `05_drugs/`: compounds-per-gene, top compounds, druggable enrichment, top druggable list, per-target compound charts.
+- `06_compare/`: pairwise scatters, rank shifts, winners/losers, intermediates/responses-only, agreement + assay-rho summaries.
+- `07_overview/`: summary table, pipeline schematic.
+- `08_report/`: report-style analogues computed on real data — score concentration curve, method-agreement panels, edge-removal robustness, relaxation sweep, hub-bias panels, weight-vs-distance, assay waterfall, top-30 rank heatmap, path-type counts/weights/DIR-enrichment, scorecard table.
+- `09_complex/`: multi-panel dashboards combining ranking, network, assay, drug, path and robustness views.
+- Plus originals at `results/figures/` root.
+- Regenerate: `python src/make_extra_figures.py`, `python src/make_100_figures.py`, `python src/make_report_style_figures.py` and `python src/make_complex_figures.py` (full-network panels need the IID download, skipped gracefully if absent).
 
 ## Reproduce
 

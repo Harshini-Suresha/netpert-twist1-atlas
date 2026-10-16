@@ -558,5 +558,40 @@
   "file": "08_report/scorecard_table.png",
   "title": "Scorecard",
   "caption": "Headline real-data numbers in one table."
+ },
+ {
+  "file": "09_complex/dashboard_overview.png",
+  "title": "Overview dashboard",
+  "caption": "Ranking, distribution, concentration, agreement, robustness and sweep in one view."
+ },
+ {
+  "file": "09_complex/dashboard_robustness.png",
+  "title": "Robustness dashboard",
+  "caption": "Edge-deletion stability plus relaxation sensitivity, with repeat intervals."
+ },
+ {
+  "file": "09_complex/dashboard_assay.png",
+  "title": "Assay dashboard",
+  "caption": "Every real wet-lab readout crossed with every ranking."
+ },
+ {
+  "file": "09_complex/dashboard_network.png",
+  "title": "Network dashboard",
+  "caption": "Degrees, provenance, composition, path types, hub bias and coverage together."
+ },
+ {
+  "file": "09_complex/dashboard_methods.png",
+  "title": "Methods dashboard",
+  "caption": "Scatters, heatmap, correlations and overlaps between all real-data rankings."
+ },
+ {
+  "file": "09_complex/dashboard_drugs.png",
+  "title": "Drugs dashboard",
+  "caption": "Coverage, top compounds, enrichment along ranks and top druggable genes."
+ },
+ {
+  "file": "09_complex/dashboard_paths.png",
+  "title": "Paths dashboard",
+  "caption": "DIR counts, weights, enrichment and the TRRUST ablation in one view."
  }
 ]
