@@ -1,0 +1,4 @@
+NetPert vs	Median ΔAUROC	Wins	Wilcoxon p
+Betweenness	+0.149	40/40	1.8e−12
+Out-degree	+0.178	40/40	1.8e−12
+Driver PPR	+0.119	40/40	1.8e−12

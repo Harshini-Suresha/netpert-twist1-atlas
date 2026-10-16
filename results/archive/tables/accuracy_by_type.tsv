@@ -1,0 +1,6 @@
+Network	NetPert	Betweenness	Out-degree	Driver PPR
+Scale-free (BA)	0.977	0.825	0.799	0.846
+Erdős–Rényi	0.958	0.685	0.685	0.856
+Small-world	0.999	0.645	0.566	0.991
+Modular (SBM)	0.770	0.684	0.609	0.906
+Directed scale-free	0.984	0.834	0.791	0.859

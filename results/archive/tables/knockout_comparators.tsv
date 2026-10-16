@@ -1,0 +1,7 @@
+Method	AUROC	Precision@20	Spearman ρ with knockout effect	AUROC vs old shortest-path truth
+NetPert	0.904 ± 0.008	0.640 ± 0.041	0.469 ± 0.022	0.978 ± 0.003
+BC (subset, paper)	0.820 ± 0.012	0.762 ± 0.036	0.497 ± 0.015	1.000 ± 0.000
+TieDIE (paper)	0.795 ± 0.016	0.715 ± 0.041	0.346 ± 0.034	0.914 ± 0.009
+Betweenness (global)	0.873 ± 0.008	0.660 ± 0.027	0.512 ± 0.013	0.826 ± 0.010
+Out-degree	0.887 ± 0.008	0.668 ± 0.031	0.569 ± 0.011	0.801 ± 0.010
+Driver PPR	0.788 ± 0.014	0.395 ± 0.046	0.339 ± 0.027	0.854 ± 0.010

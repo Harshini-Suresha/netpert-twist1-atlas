@@ -108,6 +108,7 @@ python src/run_real_netpert.py
 - `results/geneRankings_real.tsv` — rankings/weights/BC/drugs for all 1,200 subnetwork genes.
 - `results/summary_real.json` — network sizes, conservation check, correlation stats, provenance.
 - `results/figures/` — real-data plots.
+- `results/archive/` — everything extracted from the report HTML so nothing is missed: 12 benchmark tables, all 25 embedded figures + captions, and the 12,000-row gene-explorer dataset (see its README; simulated, not real).
 
 ## Limitations
 

@@ -1,0 +1,26 @@
+file	caption
+sim_fig_01.png	Figure 1. Recovery of planted mediators. NetPert outperforms betweenness, out-degree and PageRank.
+sim_fig_02.png	Figure 2. Ranking stability under edge removal (left) and random edge addition (right). Shaded bands are ±1 SD. NetPert and betweenness degrade similarly in ran
+sim_fig_03.png	Figure 3. Left: top-30 NetPert weights on one network, coloured by ground truth. Right: rank agreement with the r = 0.5 ranking as the relaxation parameter vari
+sim_fig_04.png	Figure 4. A 120-node simulated network. Node size and colour show NetPert weight for true mediators, and gene IDs mark the top five ranked genes. Weight concent
+sim_fig_05.png	Figure 5. The time-resolved integrand behind the weights, summed over responses, for the 20 top-ranked genes. Each gene's weight is the area under its row (Romb
+sim_fig_06.png	Figure 6. Left: NetPert weight against betweenness for one 300-node network. Right: mean ROC curves across 40 networks.
+sim_fig_07.png	Figure 7. Mean Spearman correlation between the rankings of the four methods across 40 networks. NetPert and betweenness agree only moderately (ρ = 0.52), so th
+sim_fig_08.png	Figure 8. Mediator recovery (AUROC, 20 networks per topology, ±95% CI) across four network types. NetPert is best on scale-free, Erdős–Rényi and small-world net
+sim_fig_09.png	Figure 9. AUROC against the number of response genes (scale-free networks). NetPert is strongest with few responses (1.00 at 3, 0.97 at 40) and the baselines ar
+sim_fig_10.png	Figure 10. Ranking stability under degree-preserving rewiring (12 repeats). NetPert's rankings decay faster than betweenness and driver PPR, reaching ρ = 0.31 a
+sim_fig_11.png	Figure 11. Rank shift of the 15 top-ranked genes after removing 20% of edges (mean over 15 repeats). Orange lines are true mediators. About half of the top 15 (
+sim_fig_12.png	Figure 12. Romberg convergence. The maximum relative weight error is 1.6e−2 at n_t = 2, 6.7e−5 at 4, 6.0e−8 at 8 and 1.3e−11 at the default of 16, reaching mach
+sim_fig_13.png	Figure 13. Wall-clock time on one CPU core for networks of 100 to 1,200 genes (20 responses, one run each): NetPert took 0.00, 0.01, 0.06, 0.43 and 1.29 s, and 
+sim_fig_14.png	Figure 14. Mean degree of the top-20 ranked genes over 40 scale-free networks. The average gene has degree 4.0. NetPert's top 20 average 11.5, driver PPR's 11.6
+sim_fig_15.png	Figure 15. Left: AUROC when a fraction of the response genes is replaced by random genes, mimicking false positives in a response signature. NetPert falls from 
+sim_fig_16.png	Figure 16. Directed networks (half of the edges bidirectional like PPI, half single-direction like regulatory edges), 30 networks. NetPert reaches AUROC 0.98 ag
+sim_fig_17.png	Figure 17. Left: activity over time (symlog axis) for the driver, the three top-ranked mediators, the mean response and the mean of all other genes. Right: cumu
+sim_fig_18.png	Figure 18. Mean relative weight (1 = uniform) by distance to the driver and to the nearest response, over 20 scale-free networks (cells with fewer than 10 genes
+sim_fig_19.png	Figure 19. Summary of the main experiments. Left of the divider: AUROC for mediator recovery on four network types, directed networks and 50% false responses (b
+sim_fig_20.png	Figure 20. Performance against the cascade-knockout truth on 40 scale-free networks (mean ± 95% CI). NetPert has the best AUROC (0.904 vs 0.887 for out-degree, 
+sim_fig_21.png	Figure 21. AUROC against the knockout truth for other cascade probabilities (BA, p = 0.3 and 0.7) and other network types (20 networks each). NetPert is best on
+sim_fig_22.png	Figure 22. AUROC and precision@20 against the full-network knockout truth as edges are removed from the observed network (mean ± 95% CI over 10 networks).
+sim_fig_23.png	Figure 23. AUROC and precision@20 against the number of responses. NetPert is the best method with few responses (AUROC 0.97 at 3, 0.93 at 10) but declines to 0
+sim_fig_24.png	Figure 24. Accuracy when a fraction of the response genes is replaced by random genes (truth is computed from the true responses). NetPert's AUROC falls from 0.
+sim_fig_25.png	Figure 25. AUROC for low-, median- and high-degree drivers, and on directed networks (half the edges bidirectional, half single-direction, 20 networks). NetPert

@@ -1,0 +1,9 @@
+Element	Setting
+Networks	300 nodes; Barabási–Albert (m = 2) by default, plus Erdős–Rényi (mean degree 6), Watts–Strogatz (k = 4, p = 0.1) and 4-block stochastic block model; connected graphs only; each undirected edge becomes two directed edges
+Driver	Random choice among the 15 highest-degree nodes
+Responses	20 nodes at shortest-path distance 3 or 4 from the driver (distance ≥ 2 if too few exist); 3–40 in Fig. 9
+Ground truth	Interior nodes on any shortest path from driver to a response, excluding the responses
+Evaluation	Driver and responses removed from scoring; AUROC (scikit-learn) and precision@20; mean ± 1.96 SD/√n over seeds (40 networks, or 20 in Figs. 8–9)
+Edge removal / addition	5–50% of edges removed uniformly, or the same number of random non-edges added; 25 repeats on one network; Spearman ρ over all scored nodes and top-20 overlap with the unperturbed ranking
+Rewiring	Degree-preserving double edge swaps, 0.05–1.6 swaps per edge; 12 repeats
+Relaxation sweep	r = 0.1, 0.25, 0.5, 0.75, 0.9, 0.99 (nt fixed at 16)
