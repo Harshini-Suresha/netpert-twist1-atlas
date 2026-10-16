@@ -5,10 +5,6 @@ Reproduction of [NetPert](https://journals.plos.org/ploscompbiol/article?id=10.1
 There are no Barabási–Albert / Erdős–Rényi / Watts–Strogatz simulations anywhere in
 `results/` — every number there comes from the sources below.
 
-> Note: `netpert_reproduction.html` in this folder is the **older synthetic benchmark**
-> (simulated scale-free networks, known ground truth). It is kept for reference only.
-> The real-data results live in `results/` and supersede it for any biological claim.
-
 ## What was run
 
 - **Driver:** `Twist1` (inducible Twist1 mouse mammary organoids, Shamir et al. dissemination model).
@@ -76,8 +72,16 @@ mismatched by construction (e.g. Sema5a shows 0% dissemination under Gö-6976/Pr
 inhibition yet ranks 1133 as a response, as expected). The value here is the
 real-data ranking + drug list, not this correlation.
 
-Figures: `results/figures/top20_netpert_real.png`,
-`results/figures/netpert_vs_dissemination_real.png`.
+Figures (`results/figures/`, all real data):
+- `top20_netpert_real.png` — top-20 NetPert intermediates.
+- `netpert_vs_dissemination_real.png` — NetPert weight vs real dissemination % (n=18).
+- `assay_inhibition_real.png` — real dissemination % bars for the 18 assayed genes.
+- `weight_dist_real.png` — NetPert weight distribution (1,200 genes).
+- `netpert_vs_bc_real.png` — NetPert vs full-network betweenness (rho=0.59).
+- `degree_vs_netpert_real.png` — hub-bias check, out-degree vs NetPert (rho=0.51).
+- `rank_comparison_real.png` — NetPert rank vs betweenness rank agreement.
+- `coverage_real.png` — response coverage (168/182) and network sizes.
+- Extra plots: `python src/make_extra_figures.py`.
 
 ## Reproduce
 
