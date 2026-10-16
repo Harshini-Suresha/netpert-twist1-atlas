@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Real-data NetPert run: Twist1 driver, IID mouse PPI + TRRUST mouse regulatory edges.
 
-No synthetic networks. All inputs are experimental/curated:
+All inputs are experimental/curated:
 - responses: data/real/responses.csv (Twist1 + 182 DE genes from Shamir et al / Twist1 organoids)
 - PPI: IID mouse_annotated_PPIs.txt.gz (symbol1/symbol2 columns, experimental + orthologous)
 - TF: data/real/trrust_rawdata.mouse.tsv (TRRUST v2, 7057 mouse TF-target pairs)
@@ -88,7 +88,7 @@ def main():
     missing = [r for r in responses_all if r not in G]
     print(f"In-network responses: {len(in_resp)}/{len(responses_all)}; missing (unconnected Gene-U): {missing}")
 
-    # --- Twist1-centered subnetwork (all real edges, no synthetic nodes) ---
+    # --- Twist1-centered subnetwork (all real edges) ---
     d1 = set(G.successors(DRIVER)) | set(G.predecessors(DRIVER))
     medi = set()
     for r in in_resp:
@@ -323,7 +323,7 @@ def main():
     plt.bar([g for g, _ in top], [w for _, w in top])
     plt.xticks(rotation=60, ha="right")
     plt.ylabel("NetPert weight (real Twist1 network)")
-    plt.title("Top-20 NetPert genes — REAL IID+TRRUST Twist1 network (no synthetic values)")
+    plt.title("Top-20 NetPert genes — REAL IID+TRRUST Twist1 network")
     plt.tight_layout()
     plt.savefig(os.path.join(FIG, "top20_netpert_real.png"), dpi=150)
     if rows:

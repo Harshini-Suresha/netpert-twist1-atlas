@@ -1,4 +1,4 @@
-# NetPert Twist1 — real lab data run (no synthetic values)
+# NetPert Twist1 — real lab data run
 
 Reproduction of [NetPert](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012195)
 (Perrone et al., PLOS Comp. Biol. 2024) using **only real experimental/curated data**.
@@ -28,7 +28,7 @@ There are no Barabási–Albert / Erdős–Rényi / Watts–Strogatz simulations
   - Dense NetPert (`scipy.linalg.expm`, Romberg `nt=16`, `r=0.5`) on a **real
     Twist1-centered subnetwork**: driver + 168 in-network responses + driver 1-hop
     (205) + shortest-path mediators (≤4 steps) + top 1-hop connectors → **1,200 nodes /
-    228,199 directed edges**. No synthetic nodes or edges added.
+    228,199 directed edges**.
   - Conservation identity `Σ_x G_bx(T−t)·G_xa(t) = G_ba(T)`: max rel. deviation **1.99e-15**.
   - Betweenness-centrality-subset (driver → responses) on the **full 17k-node network**
     and on the subnetwork; out-degree baseline.
